@@ -1,8 +1,2 @@
 {{outlet}}
-<h1>Houses</h1>
-<ul>
-{{#each model as |house|}}
-  <li>{{house.street_name}}</li>
-  <li>{{house.num_units}}</li>
-{{/each}}
-</ul>
+{{my-houses housesData=model}}
