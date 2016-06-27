@@ -1,7 +1,7 @@
 <h1>Houses</h1>
 <ul>
 {{#each housesData as |house|}}
-  <li>{{house.street_name}}</li>
+  {{#link-to "house" house}}{{house.street_name}}{{/link-to}}
   <li>{{house.num_units}}</li>
 {{/each}}
 </ul>
