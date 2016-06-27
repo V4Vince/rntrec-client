@@ -1,2 +1,5 @@
 
   <li>{{house.street_name}}</li>
+  {{#each house.unit as |unit|}}
+  <li>{{unit.unit_num}}</li>
+  {{/each}}
