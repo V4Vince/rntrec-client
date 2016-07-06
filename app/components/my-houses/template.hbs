@@ -1,7 +1,6 @@
-<h1>Houses</h1>
+<h1>Your Houses</h1>
 <ul>
 {{#each housesData as |house|}}
-  {{#link-to "house" house}}{{house.street_name}}{{/link-to}}
-  <li>{{house.num_units}}</li>
+  <li>{{#link-to 'house' house}}{{house.street_name}}{{/link-to}}</li>
 {{/each}}
 </ul>

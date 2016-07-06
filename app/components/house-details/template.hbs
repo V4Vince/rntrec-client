@@ -1,5 +1,9 @@
-
-  <li>{{house.street_name}}</li>
-  {{#each house.unit as |unit|}}
-  <li>{{unit.unit_num}}</li>
-  {{/each}}
+<h3>Details For:</h3>
+<h2>{{house.street_name}}</h2>
+<li>Number of Units: {{house.num_units}}</li>
+<li>Purchase Price: {{house.purchase_price}}</li>
+<li>current Price: {{house.current_price}}</li>
+<h4>Unit info</h4>
+{{#each house.units as |unit|}}
+  <p>{{#link-to 'unit' unit}}UNIT {{unit.unit_num}}{{/link-to}}</p>
+{{/each}}
