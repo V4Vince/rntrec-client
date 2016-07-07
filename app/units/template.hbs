@@ -1,6 +1,5 @@
 {{outlet}}
-<h2>{{model.unit_num}}</h2>
+<h3>All Units</h3>
 {{#each model as |unit|}}
-  <li>{{#link-to 'unit' unit}}Unit: {{units}}{{/link-to}}</li>
-  <li>{{units.house.street_name}}</li>
+  <li>{{#link-to 'unit' unit}}Unit:{{unit.unit_num}}{{/link-to}}</li>
 {{/each}}
