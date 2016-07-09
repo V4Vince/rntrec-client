@@ -1,8 +1,8 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    {{navbar-header}}
+<nav class="navbar navbar-custom">
+  <div id="navigation-container" class="container-fluid">
+    {{!-- {{navbar-header}} --}}
 
-    <div class="collapse navbar-collapse" id="navigation">
+    {{!-- <div class="collapse navbar-collapse" id="navigation"> --}}
       <ul class="nav navbar-nav">
         {{#if isAuthenticated}}
         <li>{{#link-to "houses"}}Houses{{/link-to}}</li>
@@ -12,14 +12,14 @@
       <ul class="nav navbar-nav navbar-right">
         {{#if isAuthenticated}}
         <li>{{#link-to "change-password"}}Change Password{{/link-to}}</li>
-        <li><button type="button" class="btn btn-default navbar-btn" {{action "signOut"}}>Sign Out</button></li>
+        <li><button type="button" class="btn btn-danger navbar-btn" {{action "signOut"}}>Sign Out</button></li>
         {{else}}
         <li>{{#link-to "sign-up"}}Sign Up{{/link-to}}</li>
         <li>{{#link-to "sign-in"}}Sign In{{/link-to}}</li>
         {{/if}}
       </ul>
     </div>
-  </div>
+  {{!-- </div> --}}
 </nav>
 
 {{#each flashMessages.queue as |flash|}}
