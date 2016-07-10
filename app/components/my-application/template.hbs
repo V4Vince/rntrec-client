@@ -1,40 +1,41 @@
+<div id="navigation-bar">
+  {{#md-navbar name='Rntrec' class='teal darken-1'}}
+    <!-- A workaround to get the "active" class
+      to apply to the active <li> automatically -->
+    {{#if isAuthenticated}}
+    {{#link-to 'houses' tagName='li'}}
+      {{link-to 'Houses' 'houses'}}
+    {{/link-to}}
+    {{#link-to 'units' tagName='li'}}
+      {{link-to 'Units' 'units'}}
+    {{/link-to}}
+    {{#link-to 'change-password' tagName='li'}}
+      {{link-to 'ChangePW' 'change-password'}}
+    {{/link-to}}
+    {{md-btn text='Log Out'
+    	icon='mdi-action-favorite'
+    	iconPosition='right'
+    	action='signOut'
+    	class='red white-text text-darken-3'}}
+    {{else}}
+    {{#link-to 'sign-up' tagName='li'}}
+      {{link-to 'Sign Up' 'sign-up'}}
+    {{/link-to}}
+    {{#link-to 'sign-in' tagName='li'}}
+      {{link-to 'Login' 'sign-in'}}
+    {{/link-to}}
+    {{/if}}
+  {{/md-navbar}}
+</div>
 
-  <div id="navigation-bar">
-    {{#md-navbar name='Rntrec' class='teal darken-1'}}
-      <!-- A workaround to get the "active" class
-        to apply to the active <li> automatically -->
-      {{#if isAuthenticated}}
-      {{#link-to 'houses' tagName='li'}}
-        {{link-to 'Houses' 'houses'}}
-      {{/link-to}}
-      {{#link-to 'units' tagName='li'}}
-        {{link-to 'Units' 'units'}}
-      {{/link-to}}
-      {{#link-to 'change-password' tagName='li'}}
-        {{link-to 'ChangePW' 'change-password'}}
-      {{/link-to}}
-      {{md-btn text='Log Out'
-      	icon='mdi-action-favorite'
-      	iconPosition='right'
-      	action='signOut'
-      	class='red white-text text-darken-3'}}
-      {{else}}
-      {{#link-to 'sign-up' tagName='li'}}
-        {{link-to 'Sign Up' 'sign-up'}}
-      {{/link-to}}
-      {{#link-to 'sign-in' tagName='li'}}
-        {{link-to 'Login' 'sign-in'}}
-      {{/link-to}}
-      {{/if}}
-    {{/md-navbar}}
-  </div>
 
+<div id="main-content" class="">
+  {{!-- {{#each flashMessages.queue as |flash|}}
+    {{flash-message flash=flash}}
+  {{/each}} --}}
+  {{outlet}}
+</div>
 
-  <div id="main-content" class="">
-    {{#each flashMessages.queue as |flash|}}
-      {{flash-message flash=flash}}
-    {{/each}}
-    {{outlet}}
-
-    {{application-footer}}
-  </div>
+<footer id="footer" class='page-footer teal darken-2 white-text'>
+  {{application-footer}}
+</footer>
