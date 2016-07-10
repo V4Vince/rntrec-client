@@ -12,11 +12,13 @@
     {{#link-to 'change-password' tagName='li'}}
       {{link-to 'ChangePW' 'change-password'}}
     {{/link-to}}
+    <!-- Log out button-->
     {{md-btn text='Log Out'
     	icon='mdi-action-favorite'
     	iconPosition='right'
     	action='signOut'
     	class='red white-text text-darken-3'}}
+    <!-- Show sign-in/sign-up if not authenticated-->
     {{else}}
     {{#link-to 'sign-up' tagName='li'}}
       {{link-to 'Sign Up' 'sign-up'}}
@@ -28,11 +30,10 @@
   {{/md-navbar}}
 </div>
 
-
-<div id="main-content" class="">
-  {{!-- {{#each flashMessages.queue as |flash|}}
+<div id="main-content">
+  {{#each flashMessages.queue as |flash|}}
     {{flash-message flash=flash}}
-  {{/each}} --}}
+  {{/each}}
   {{outlet}}
 </div>
 

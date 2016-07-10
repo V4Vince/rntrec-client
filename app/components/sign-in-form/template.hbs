@@ -1,6 +1,10 @@
 {{email-input email=credentials.email}}
 {{password-input password=credentials.password}}
 
+{{md-check name="Remember me"
+  checked=checkboxIsSelected
+  for="remember"}}
+
 {{md-btn text='Sign In'
   action='submit'
   class='blue white-text text-darken-3'}}
