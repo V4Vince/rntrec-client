@@ -1,31 +1,40 @@
-<nav class="navbar navbar-custom">
-  <div id="navigation-container" class="container-fluid">
-    {{!-- {{navbar-header}} --}}
 
-    {{!-- <div class="collapse navbar-collapse" id="navigation"> --}}
-      <ul class="nav navbar-nav">
-        {{#if isAuthenticated}}
-        <li>{{#link-to "houses"}}Houses{{/link-to}}</li>
-        <li>{{#link-to "units"}}Units{{/link-to}}</li>
-        {{/if}}
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        {{#if isAuthenticated}}
-        <li>{{#link-to "change-password"}}Change Password{{/link-to}}</li>
-        <li><button type="button" class="btn btn-danger navbar-btn" {{action "signOut"}}>Sign Out</button></li>
-        {{else}}
-        <li>{{#link-to "sign-up"}}Sign Up{{/link-to}}</li>
-        <li>{{#link-to "sign-in"}}Sign In{{/link-to}}</li>
-        {{/if}}
-      </ul>
-    </div>
-  {{!-- </div> --}}
-</nav>
+  <div id="navigation-bar">
+    {{#md-navbar name='Rntrec' class='teal darken-1'}}
+      <!-- A workaround to get the "active" class
+        to apply to the active <li> automatically -->
+      {{#if isAuthenticated}}
+      {{#link-to 'houses' tagName='li'}}
+        {{link-to 'Houses' 'houses'}}
+      {{/link-to}}
+      {{#link-to 'units' tagName='li'}}
+        {{link-to 'Units' 'units'}}
+      {{/link-to}}
+      {{#link-to 'change-password' tagName='li'}}
+        {{link-to 'ChangePW' 'change-password'}}
+      {{/link-to}}
+      {{md-btn text='Log Out'
+      	icon='mdi-action-favorite'
+      	iconPosition='right'
+      	action='signOut'
+      	class='red white-text text-darken-3'}}
+      {{else}}
+      {{#link-to 'sign-up' tagName='li'}}
+        {{link-to 'Sign Up' 'sign-up'}}
+      {{/link-to}}
+      {{#link-to 'sign-in' tagName='li'}}
+        {{link-to 'Login' 'sign-in'}}
+      {{/link-to}}
+      {{/if}}
+    {{/md-navbar}}
+  </div>
 
-{{#each flashMessages.queue as |flash|}}
-  {{flash-message flash=flash}}
-{{/each}}
 
-<div class="col-md-8 col-md-offset-2">
-  {{outlet}}
-</div>
+  <div id="main-content" class="">
+    {{#each flashMessages.queue as |flash|}}
+      {{flash-message flash=flash}}
+    {{/each}}
+    {{outlet}}
+
+    {{application-footer}}
+  </div>
