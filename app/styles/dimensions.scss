@@ -10,6 +10,10 @@ html {
   height: auto;
 }
 
+#navigation-bar {
+  margin-bottom: 25px;
+}
+
 #main-content  {
   padding-bottom: 180px;
 }
@@ -23,4 +27,9 @@ html {
 .form-horizontal {
   width: 60%;
   margin: 0 auto 100px;
+}
+
+.house-cards {
+  width: 80%;
+  margin: 0 auto;
 }
