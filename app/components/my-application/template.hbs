@@ -1,5 +1,5 @@
 <div id="navigation-bar" class="container-fluid">
-  {{#md-navbar name='Rntrec' class='teal darken-1'}}
+  {{#md-navbar name='Rntrec' class='teal darken-1' homeRoute='index'}}
     <!-- A workaround to get the "active" class
       to apply to the active <li> automatically -->
     {{#if isAuthenticated}}
@@ -14,10 +14,8 @@
     {{/link-to}}
     <!-- Log out button-->
     {{md-btn text='Log Out'
-    	icon='mdi-action-favorite'
-    	iconPosition='right'
     	action='signOut'
-    	class='red white-text text-darken-3'}}
+    	class='btn-large red white-text text-darken-3'}}
     <!-- Show sign-in/sign-up if not authenticated-->
     {{else}}
     {{#link-to 'sign-up' tagName='li'}}
