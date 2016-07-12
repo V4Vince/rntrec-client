@@ -7,3 +7,17 @@
 {{#each house.units as |unit|}}
   <p>{{#link-to 'unit' unit}}UNIT {{unit.unit_num}}{{/link-to}}</p>
 {{/each}}
+
+
+<div class="row">
+      <div class="col s12 m5">
+        <div class="card-panel teal">
+          <span class="white-text">
+            {{house.street_name}}
+          </span>
+          <span class="white-text">
+            {{house.num_units}
+          </span>
+        </div>
+      </div>
+    </div>
