@@ -1,23 +1,37 @@
 {{#each housesData as |house|}}
 
-<div class="row">
+<div class="row house-cards">
   <div class="col s12 container">
-    <div class="card blue-grey lighten-1">
+    <div class="card">
 
       {{#link-to 'house' house}}
-      <div class="card-content white-text">
-        <span class="card-title">{{house.street_name}}</span>
-        <p>Current Value: {{house.current_price}}</p>
+      <div class="card-content">
+        <span class="card-title street-name">{{house.street_name}}</span>
+        {{#if (not house.current_price)}}
+        <p class="house-card-substript">Current value not available</p>
+        {{else}}
+        <p class="house-card-substript">Current Value: {{house.current_price}}</p>
+        {{/if}}
       </div>
       {{/link-to}}
 
+      {{#if house.units}}
       {{#each house.units as |unit|}}
       {{#link-to 'unit' unit}}
       <div class="house-card card-action">
-        Unit #{{unit.unit_num}}
+        <span class="house-unit-card">Unit #{{unit.unit_num}}</span>
       </div>
       {{/link-to}}
       {{/each}}
+
+      {{else}}
+      <div class="house-card card-action">
+      {{md-btn text='Add Unit'
+      	action='addUnit'
+      	class='btn-sm red text-darken-3'}}
+      </div>
+      {{/if}}
+
 
     </div>
   </div>
