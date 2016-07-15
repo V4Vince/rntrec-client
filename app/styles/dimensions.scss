@@ -10,6 +10,10 @@ html {
   height: auto;
 }
 
+* > a {
+  text-decoration: none;
+}
+
 #navigation-bar {
   margin-bottom: 25px;
 }
@@ -31,7 +35,6 @@ html {
   margin: 0 auto 100px;
 }
 
-.house-cards {
-  width: 80%;
-  margin: 0 auto;
+.house-card {
+  color: white;
 }
