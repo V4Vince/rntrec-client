@@ -42,18 +42,27 @@
         </div>
 
         {{#each house.units as |unit|}}
-        {{#link-to 'unit' unit}}
+        {{#if house.units}}
+        {{#link-to 'unit' unit.id}}
           <div class="card-panel teal valign-wrapper">
               <div class="col s2">
                 {{unit.unit_num}}
               </div>
-
               <div class="col s9">
                 content here
               </div>
           </div>
         {{/link-to}}
+
+        {{else}}
+          <div class="card-panel black valign-wrapper">
+              <div class="col s6">
+                There are no units for this property
+              </div>
+          </div>
+        {{/if}}
         {{/each}}
+
 
       </div>
     </div>
