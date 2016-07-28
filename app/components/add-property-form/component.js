@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  tagName: 'form',
   //submit
   houseParams: {},
 
@@ -13,9 +14,12 @@ export default Ember.Component.extend({
   actions: {
     submit () {
       this.sendAction('submit', this.get('houseParams'));
+      let check = this.get('houseParams');
+      console.log(check);
     },
     reset () {
       this.set('houseParams', {});
+      console.log("hi");
     },
   },
 });
