@@ -41,86 +41,36 @@
         <div class="divider">
         </div>
 
-        {{#each house.units as |unit|}}
-        {{#if house.units}}
-        {{#link-to 'unit' unit.id}}
-          <div class="card-panel teal valign-wrapper">
-              <div class="col s2">
-                {{unit.unit_num}}
-              </div>
-              <div class="col s9">
-                content here
-              </div>
-          </div>
-        {{/link-to}}
 
-        {{else}}
-          <div class="card-panel black valign-wrapper">
-              <div class="col s6">
-                There are no units for this property
-              </div>
+        {{#if house.units}}
+        {{#each house.units as |unit|}}
+        {{#link-to 'unit' unit.id}}
+        <div class="row">
+          <div class="card-panel teal valign-wrapper">
+            <div class="col s2">
+              {{unit.unit_num}}
+            </div>
+            <div class="col s9">
+              content here
+            </div>
           </div>
-        {{/if}}
+        </div>
+        {{/link-to}}
         {{/each}}
 
+        {{else}}
+        <div class="row">
+          <div class="col s12">
+            <div class="card-panel grey center-align">
+              You have not entered any units for this property
+            </div>
+          </div>
+        </div>
+        {{/if}}
 
       </div>
     </div>
   </div>
 </div>
-
-
-
-
-{{!-- <div class="row">
-  <div class="col s12">
-    <div class="card-panel teal">
-      <h5 class="card-title street-name center">{{house.street_name}}</h5>
-      <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-      I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-      </span>
-    </div>
-  </div>
-</div> --}}
-
-
-
-
-{{!-- <div class="row house-cards">
-  <div class="col s12 container">
-    <div class="card">
-
-      {{#link-to 'house' house}}
-      <div class="card-content">
-        <span class="card-title street-name">{{house.street_name}}</span>
-        {{#if (not house.current_price)}}
-        <p class="house-card-substript">Current value not available</p>
-        {{else}}
-        <p class="house-card-substript">Current Value: {{house.current_price}}</p>
-        {{/if}}
-      </div>
-      {{/link-to}}
-
-      {{#if house.units}}
-      {{#each house.units as |unit|}}
-      {{#link-to 'unit' unit}}
-      <div class="house-card card-action">
-        <span class="house-unit-card">Unit #{{unit.unit_num}}</span>
-      </div>
-      {{/link-to}}
-      {{/each}}
-
-      {{else}}
-      <div class="house-card card-action">
-      {{md-btn text='Add Unit'
-      	action='addUnit'
-      	class='btn-sm red text-darken-3'}}
-      </div>
-      {{/if}}
-
-
-    </div>
-  </div>
-</div> --}}
 
 {{/each}}
