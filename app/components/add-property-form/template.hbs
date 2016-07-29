@@ -8,33 +8,35 @@
 
     Also have option to add unit details here -->
 
+<h4>Add Property Form</h4>
+
 {{md-input value=houseParams.street_name
     label="Street Name"
     type='text'
     class="col s12"
-    validate=false}}
+    validate=true}}
 
 {{md-input value=houseParams.mortgage
     label="Monthly Mortgage"
-    type='text'
+    type='number'
     class="col s6"
     validate=true}}
 
 {{md-input value=houseParams.taxes
     label="Monthly Taxes"
-    type='text'
+    type='number'
     class="col s6"
     validate=true}}
 
 {{md-input value=houseParams.insurance
     label="Monthly Insurance"
-    type='text'
+    type='number'
     class="col s6"
     validate=true}}
 
 {{md-input value=houseParams.num_units
     label="Number of units"
-    type='text'
+    type='number'
     class="col s6"
     validate=true}}
 

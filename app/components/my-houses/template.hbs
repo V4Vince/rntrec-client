@@ -5,9 +5,28 @@
       <div class="card-content container">
 
         <div class="card-title">
-          <h4 class="center-align">{{house.street_name}}
-          <i class="material-icons right">more_vert</i></h4>
+          {{#link-to 'house' house.id}}
+          <h4 class="center-align">
+            {{house.street_name}}
+            <!-- Make this clickable and show drop down with below ul-->
+            <i class="material-icons right">more_vert</i>
+          </h4>
+          {{/link-to}}
         </div>
+
+<!--
+         Dropdown Trigger
+<a class='dropdown-button btn' href='#' data-activates='dropdown1'>Drop Me!</a>
+         Dropdown Structure
+ <ul id='dropdown1' class='dropdown-content'>
+   <li><a href="#!">one</a></li>
+   <li><a href="#!">two</a></li>
+   <li class="divider"></li>
+   <li><a href="#!">Delete</a></li>
+ </ul>
+ -->
+
+
 
         <div class="divider">
         </div>
