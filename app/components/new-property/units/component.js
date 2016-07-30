@@ -4,17 +4,15 @@ export default Ember.Component.extend({
   flashMessages: Ember.inject.service(),
   store: Ember.inject.service(),
   tagName: 'form',
-  //house
+  //house   <- from house-details Component
+  //addUnit <- from house-details Component
   unitParams: {},
 
 //Still need to create actions for:
-//1. Sending unit params in same submit actions
-//2. Sending contract paramas in same submit actions
+//1.option to create a house and its units and contracts at the same time.
 
-//Beacase user will have option to create a house and its units
-//and contracts at the same time.
   actions: {
-    //creating a record that has a belongs to relationship
+      //creating a record that has a belongs to relationship
       submit () {
         let id = this.get('house.id');
         let unitParams = this.get('unitParams');
@@ -22,7 +20,7 @@ export default Ember.Component.extend({
         let unit = this.get('store').createRecord('unit', unitParams);
         house.get('units').pushObject(unit);
         unit.save()
-        .then(() => this.set('unitParams', {}))
+        .then(() => this.set('addUnit', false))
         .then(() => {
           this.get('flashMessages')
           .success('Successfully added a unit');
@@ -38,6 +36,6 @@ export default Ember.Component.extend({
         console.log("reset check");
       },
 
-    },
+    }, //actions
 
-});
+}); //Ember.Component

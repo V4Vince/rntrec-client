@@ -3,23 +3,37 @@
 <li>Number of Units: {{house.num_units}}</li>
 <li>Purchase Price: {{house.purchase_price}}</li>
 <li>current Price: {{house.current_price}}</li>
-<h4>Unit info</h4> --}}
+ --}}
+
+ <!-- Need to:
+      1. -->
+ <h4>House Details</h4>
+<div class="row">
+  <div class="col s12">
+    <div class="card-panel teal">
+      <span class="white-text">
+        {{house.street_name}}
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- Still need to:
+      1. Format UI
+      2. Create a delete button
+-->
 {{#each house.units as |unit|}}
-  <p>{{#link-to 'unit' unit}}UNIT {{unit.unit_num}}{{/link-to}}</p>
+  <li>{{#link-to 'unit' unit}}UNIT {{unit.unit_num}}{{/link-to}}</li>
 {{/each}}
 
 
-<div class="row">
-      <div class="col s12">
-        <div class="card-panel teal">
-          <span class="white-text">
-            {{house.street_name}}
-          </span>
-          <span class="white-text">
-            {{!-- {{house.num_units} --}}
-          </span>
-        </div>
-      </div>
-    </div>
 
-{{new-property/units house=house}}
+{{#unless addUnit}}
+  {{md-btn text='Add Unit'
+    action='add'
+    class='blue white-text text-darken-3'}}
+{{/unless}}
+
+{{#if addUnit}}
+  {{new-property/units house=house addUnit=addUnit unitParams=unitParams}}
+{{/if}}
