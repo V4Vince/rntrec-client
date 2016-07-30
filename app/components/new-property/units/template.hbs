@@ -1,0 +1,39 @@
+{{yield}}
+
+
+<h4>new unit form</h4>
+
+{{md-input value=unitParams.unit_num
+    label="Unit Number"
+    type='text'
+    class="col s12"
+    validate=true}}
+
+{{md-input value=unitParams.num_bedrooms
+    label="Number of Bedrooms"
+    type='number'
+    class="col s6"
+    validate=true}}
+
+{{md-input value=unitParams.num_bathrooms
+    label="Number of BAthrooms"
+    type='number'
+    class="col s6"
+    validate=true}}
+
+{{md-input value=unitParams.num_parking
+    label="Number of PArking"
+    type='number'
+    class="col s6"
+    validate=true}}
+
+<!-- Need to add expenses for unit -->
+
+
+{{md-btn text='Submit'
+  action='submit'
+  class='blue white-text text-darken-3'}}
+
+{{md-btn text='Cancel'
+  action='reset'
+  class='red white-text text-darken-3'}}
