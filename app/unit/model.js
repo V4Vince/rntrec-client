@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  unit_num: DS.attr('number'),
+  unit_num: DS.attr('string'),
   num_bedrooms: DS.attr('number'),
   num_bathrooms: DS.attr('number'),
   num_parking: DS.attr('number'),
