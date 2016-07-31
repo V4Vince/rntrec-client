@@ -1,5 +1,13 @@
-
 <h3>All Units</h3>
+
 {{#each model as |unit|}}
+  <li>{{unit.house.street_name}}</li>
   <li>{{#link-to 'unit' unit}}Unit:{{unit.unit_num}}{{/link-to}}</li>
 {{/each}}
+
+
+{{#index-modal title='add unit'}}
+  <p>
+    testinggggg
+  </p>
+{{/index-modal}}
