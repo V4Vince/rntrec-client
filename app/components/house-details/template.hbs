@@ -1,13 +1,4 @@
-{{!-- <h3>Details For:</h3>
-<h2>{{house.street_name}}</h2>
-<li>Number of Units: {{house.num_units}}</li>
-<li>Purchase Price: {{house.purchase_price}}</li>
-<li>current Price: {{house.current_price}}</li>
- --}}
-
- <!-- Need to:
-      1. -->
- <h4>House Details</h4>
+<h4>House Details</h4>
 <div class="row">
   <div class="col s12">
     <div class="card-panel teal">
@@ -35,5 +26,22 @@
 {{/unless}}
 
 {{#if addUnit}}
-  {{new-property/units house=house addUnit=addUnit unitParams=unitParams}}
+  {{new-property/units
+    house=house
+    addUnit=addUnit
+    unitParams=unitParams
+
+    unit_num=unitParams.unit_num
+    num_bedrooms=unitParams.num_bedrooms
+    num_bathrooms=unitParams.num_bathrooms
+    num_parking=unitParams.num_parking }}
+
+
+  {{md-btn text='Submit'
+    action='submit'
+    class='blue white-text text-darken-3'}}
+
+  {{md-btn text='Cancel'
+    action='reset'
+    class='red white-text text-darken-3'}}
 {{/if}}
