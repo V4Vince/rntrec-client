@@ -1,5 +1,3 @@
-{{yield}}
-
 <!-- Inject field forms for creating houses here by generating their components:
      Street address (done)
      Mortgage amount (done)
@@ -10,36 +8,36 @@
 
 <h4>Add Property Form</h4>
 
-{{md-input value=houseParams.street_name
+{{md-input value=street_name
     label="Street Name"
     type='text'
     class="col s12"
     validate=true}}
 
-{{md-input value=houseParams.mortgage
+{{md-input value=mortgage
     label="Monthly Mortgage"
     type='number'
     class="col s6"
     validate=true}}
 
-{{md-input value=houseParams.taxes
+{{md-input value=taxes
     label="Monthly Taxes"
     type='number'
     class="col s6"
     validate=true}}
 
-{{md-input value=houseParams.insurance
+{{md-input value=insurance
     label="Monthly Insurance"
     type='number'
     class="col s6"
     validate=true}}
 
-{{md-input value=houseParams.num_units
+{{md-input value=num_units
     label="Number of units"
     type='number'
     class="col s6"
     validate=true}}
-
+{{!--
 
 {{md-btn text='Submit'
   action='submit'
@@ -47,4 +45,4 @@
 
 {{md-btn text='Cancel'
   action='reset'
-  class='red white-text text-darken-3'}}
+  class='red white-text text-darken-3'}} --}}

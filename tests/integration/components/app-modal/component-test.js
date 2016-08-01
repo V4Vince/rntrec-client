@@ -1,7 +1,7 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('index-modal', 'Integration | Component | index modal', {
+moduleForComponent('app-modal', 'Integration | Component | app modal', {
   integration: true
 });
 
@@ -9,15 +9,15 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{index-modal}}`);
+  this.render(hbs`{{app-modal}}`);
 
   assert.equal(this.$().text().trim(), '');
 
   // Template block usage:
   this.render(hbs`
-    {{#index-modal}}
+    {{#app-modal}}
       template block text
-    {{/index-modal}}
+    {{/app-modal}}
   `);
 
   assert.equal(this.$().text().trim(), 'template block text');

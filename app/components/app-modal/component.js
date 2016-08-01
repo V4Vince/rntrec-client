@@ -12,6 +12,6 @@ export default Ember.Component.extend({
     closeModal: function(){
       this.set('modalIsOpen', false);
     },
-
   },
+  
 });
