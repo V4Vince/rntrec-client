@@ -14,9 +14,8 @@ export default Ember.Component.extend({
   actions: {
     submit () {
       this.sendAction('submit', this.get('houseParams'));
-      let check = this.get('houseParams');
-      console.log(check);
     },
+
     reset () {
       this.set('houseParams', {});
       console.log("hi");
