@@ -4,39 +4,27 @@
     <div class="card">
       <div class="card-content container">
 
+        <!-- Street heading with link to house-details-->
         <div class="card-title">
           {{#link-to 'house' house.id}}
           <h4 class="center-align">
             {{house.street_name}}
-            <!-- Make this clickable and show drop down with below ul-->
+            <!-- Make this clickable -->
             <i class="material-icons right">more_vert</i>
           </h4>
           {{/link-to}}
         </div>
 
-<!--
-         Dropdown Trigger
-<a class='dropdown-button btn' href='#' data-activates='dropdown1'>Drop Me!</a>
-         Dropdown Structure
- <ul id='dropdown1' class='dropdown-content'>
-   <li><a href="#!">one</a></li>
-   <li><a href="#!">two</a></li>
-   <li class="divider"></li>
-   <li><a href="#!">Delete</a></li>
- </ul>
- -->
-
-
-
         <div class="divider">
         </div>
 
-        <div class="row">
-          <div class="col s12 center-align">
-            <h4 class="house-net-revenue">$12,032</h4>
-            <p>NET REVENUE</p>
-          </div>
+        <!-- Revenue Line -->
+        <div class="col s12 center-align">
+          <h4 class="house-net-revenue">$12,032</h4>
+          <p>NET REVENUE</p>
         </div>
+
+        <!-- Two care panels-->
         <div class="row">
           <div class="col s12 m6">
             <div class="card-panel teal">
@@ -55,13 +43,14 @@
           </div>
         </div>
 
-
         <div class="divider">
         </div>
 
-        <!-- Ember helpers to determine actions based on if houses have units or not -->
-        {{#if house.units}}
+    <!-- Ember helpers to determine actions based on if houses have units or not -->
+    {{#if house.units}}
+
         {{#each house.units as |unit|}}
+        <!-- Each unit will have a link -->
         {{#link-to 'unit' unit.id}}
         <div class="row">
           <div class="card-panel teal valign-wrapper">
@@ -75,21 +64,26 @@
         </div>
         {{/link-to}}
         {{/each}}
+
+
+    {{else}}
         <!-- Shows add button if house does not have unit -->
-        {{else}}
         <div class="row">
           <div class="col s12">
             <div class="card-panel grey center-align">
               <p>You have not entered any units for this property</p>
+              <!-- Currently links to new-property route.
+                    Need to make link to new unit route Component -->
               {{#link-to 'add-property'}}
               <a class="waves-effect waves-light btn">Add Units</a>
               {{/link-to}}
             </div>
           </div>
         </div>
-        {{/if}}
 
-      </div>
+    {{/if}}
+
+      </div> <!-- card-content-->
     </div>
   </div>
 </div>
