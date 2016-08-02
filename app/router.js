@@ -14,7 +14,7 @@ Router.map(function () {
   this.route('house', { path: '/houses/:house_id' });
   this.route('units');
   this.route('unit', { path: '/units/:unit_id' });
-  this.route('add-property');
+  this.route('new-property');
 });
 
 export default Router;

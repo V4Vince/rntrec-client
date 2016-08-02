@@ -2,13 +2,7 @@
 TO DO:
 1.Import from newproperty/building instead of add-property-form (DONE)
 2.Must revise new-property/building to be like add-property-form -->
-{{#unless showPropertyForm}}
-  {{md-btn text='Add Property'
-    action='addProperty'
-    class='blue white-text text-darken-3'}}
-{{/unless}}
 
-{{#if showPropertyForm}}
   <h4>Add Property Form</h4>
 
   {{new-property/building
@@ -26,4 +20,3 @@ TO DO:
   {{md-btn text='Cancel'
     action='reset'
     class='red white-text text-darken-3'}}
-{{/if}}

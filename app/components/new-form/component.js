@@ -7,7 +7,6 @@ export default Ember.Component.extend({
   router: Ember.inject.service('-routing'),
   tagName: 'form',
 
-  showPropertyForm: false,
   houseParams: {},
 
 //Issues:
@@ -15,10 +14,6 @@ export default Ember.Component.extend({
 //   one that has an ID and is saved on the server
 //   one that has NO ID and is not saved on the server
   actions: {
-    addProperty: function(){
-      this.set('showPropertyForm', true);
-      this.set('houseParams', {});
-    },
 
     submit () {
       let houseParams = this.get('houseParams');
