@@ -4,8 +4,9 @@ export default Ember.Component.extend({
   flashMessages: Ember.inject.service(),
   store: Ember.inject.service(),
   tagName: 'form',
-  //house   <- from house-details Component
-  //addUnit <- from house-details Component
+  //house   <- from house route
+  //addUnit <- from house route
+  //delete <- from house route
   unitParams: {},
   addUnit: false,
 
@@ -24,7 +25,7 @@ export default Ember.Component.extend({
         let house = this.get('store').peekRecord('house', id);
         let unit = this.get('store').createRecord('unit', unitParams);
         house.get('units').pushObject(unit);
-        unit.save()
+        return unit.save()
         .then(() => this.set('addUnit', false))
         .then(() => {
           this.get('flashMessages')
@@ -35,11 +36,15 @@ export default Ember.Component.extend({
           .danger('There was a problem. Please try again.');
         });
       },
-
       reset () {
         this.set('unitParams', {});
         console.log("reset check");
       },
+
+      delete(){
+        let thisProperty = this.get('house');
+        this.sendAction('delete', thisProperty);
+        },
 
     }, //actions
 

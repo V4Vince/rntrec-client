@@ -2,20 +2,28 @@
 TO DO:
 1.Import from newproperty/building instead of add-property-form (DONE)
 2.Must revise new-property/building to be like add-property-form -->
+{{#unless showPropertyForm}}
+  {{md-btn text='Add Property'
+    action='addProperty'
+    class='blue white-text text-darken-3'}}
+{{/unless}}
 
-<h4>Add Property Form</h4>
-{{new-property/building
-    street_name=houseParams.street_name
-    mortgage=houseParams.mortgage
-    taxes=houseParams.taxes
-    insurance=houseParams.insurance
-    num_units=houseParams.num_units
-  }}
+{{#if showPropertyForm}}
+  <h4>Add Property Form</h4>
 
-{{md-btn text='Submit'
-  action='submit'
-  class='blue white-text text-darken-3'}}
+  {{new-property/building
+      street_name=houseParams.street_name
+      mortgage=houseParams.mortgage
+      taxes=houseParams.taxes
+      insurance=houseParams.insurance
+      num_units=houseParams.num_units
+    }}
 
-{{md-btn text='Cancel'
-  action='reset'
-  class='red white-text text-darken-3'}}
+  {{md-btn text='Submit'
+    action='submit'
+    class='blue white-text text-darken-3'}}
+
+  {{md-btn text='Cancel'
+    action='reset'
+    class='red white-text text-darken-3'}}
+{{/if}}
