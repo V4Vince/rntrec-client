@@ -1,14 +1,23 @@
-<h4>House Details</h4>
+<h4>Property Details</h4>
 <div class="row">
-  <div class="col s12">
-    <div class="card-panel teal">
-      <span class="white-text">
-        {{house.street_name}}
-      </span>
-      {{delete-button house=house delete="delete"}}
+  <div class="col s12 m9">
+    <div class="card white darken-1">
+      <div class="card-content house-card">
+        <span id="house-name-card-title" class="card-title">{{house.street_name}}</span>
+        {{delete-button delete="delete"}}
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m2">
+    <div class="card teal darken-1">
+      <div class="card-content house-card">
+        <span id="house-name-card-title" class="card-title">{{house.street_name}}</span>
+        {{delete-button delete="delete"}}
+      </div>
     </div>
   </div>
 </div>
+
 
 <!-- Still need to:
       1. Format UI
@@ -16,14 +25,9 @@
 
       3. Inject house info into the heading of unit-details
 -->
-{{!-- {{#each house.units as |unit|}}
-  <li>{{#link-to 'unit' unit}}UNIT {{unit.unit_num}}{{/link-to}}</li>
-{{/each}} --}}
 
 {{#each house.units as |unit|}}
-{{#md-collection house=house as |house|}}
-  {{link-to house.unit house.route class='collection-item'}}
-{{/md-collection}}
+
 {{/each}}
 
 

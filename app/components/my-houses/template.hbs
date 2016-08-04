@@ -1,178 +1,79 @@
-
-
 {{#each housesData as |house|}}
 
+    <div class="row all-property-card">
+      <div class="col s12 l10">
+        <div class="card white darken-1">
+          <div class="card-content house-card">
+            {{#link-to 'house' house.id}}
+            <span id="house-name-card-title" class="card-title">{{house.street_name}}</span>
+            {{/link-to}}
 
-<div class="row">
-  <div class="col s12">
-    <div class="card white darken-1">
+            <div class="divider">
+            </div>
 
-      <div class="card-content house-card">
-        {{#link-to 'house' house.id}}
-        <span id="house-name-card-title" class="card-title">{{house.street_name}}</span>
-        {{/link-to}}
+            <div class="house-quick-info-container row">
+              <div class="col s6 m4">
+                <div class="card-panel">
+                  <span class="house-quick-info ">
+                    <p>$12,000</p>
+                  </span>
+                  <span class="subscript">
+                    <p>Net Revenue</p>
+                  </span>
+                </div>
+              </div>
 
-        <div class="divider">
-        </div>
+              <div class="col s6 m4">
+                <div class="card-panel">
+                  <span class="house-quick-info white">
+                    <p>5/6</p>
+                  </span>
+                  <span class="subscript">
+                    <p>Active Units</p>
+                  </span>
+                </div>
+              </div>
 
-        <div class="house-quick-info-container row">
+              <div class="col s6 m4">
+                <div class="card-panel">
+                  <span class="house-quick-info ">
+                    <p>$12,000</p>
+                  </span>
+                  <span class="subscript">
+                    <p>Net Revenue</p>
+                  </span>
+                </div>
+              </div>
 
-          <div class="col s6 m3">
-            <div class="card-panel">
-              <span class="house-quick-info ">
-                <p>$12,000</p>
-              </span>
-              <span class="subscript">
-                <p>Net Revenue</p>
-              </span>
+              <div class="col s6 m4">
+                <div class="card-panel">
+                  <span class="house-quick-info white">
+                    <p>5/6</p>
+                  </span>
+                  <span class="subscript">
+                    <p>Active Units</p>
+                  </span>
+                </div>
+              </div>
+
+            </div><!-- house-quick-info-container row -->
+          </div><!-- card-content -->
+        </div><!--card-->
+      </div><!--col-->
+
+      <div class="col s12 l2">
+        {{#if house.units}}
+        {{#each house.units as |unit|}}
+          {{#link-to "unit" unit.id}}
+          <div class="card z-depth-2">
+            <div class="unit-card-content center-align flow-text">
+              <span class="unit-subscript">Unit</span> {{unit.unit_num}}
             </div>
           </div>
-
-          <div class="col s6 m3">
-            <div class="card-panel">
-              <span class="house-quick-info white">
-                <p>5/6</p>
-              </span>
-              <span class="subscript">
-                <p>Active Units</p>
-              </span>
-            </div>
-          </div>
-
-          <div class="col s6 m3">
-            <div class="card-panel">
-              <span class="house-quick-info ">
-                <p>$12,000</p>
-              </span>
-              <span class="subscript">
-                <p>Net Revenue</p>
-              </span>
-            </div>
-          </div>
-
-          <div class="col s6 m3">
-            <div class="card-panel">
-              <span class="house-quick-info white">
-                <p>5/6</p>
-              </span>
-              <span class="subscript">
-                <p>Active Units</p>
-              </span>
-            </div>
-          </div>
-
-        </div><!-- house-quick-info-container row -->
-      </div><!-- card-content -->
-
-      {{#if house.units}}
-      {{#each house.units as |unit|}}
-
-      {{#link-to "unit" unit.id}}
-        <div class="house-unit-card card-action">
-          <span class="unit-subscript">Unit</span> {{unit.unit_num}}
-        </div>
-      {{/link-to}}
-
-      {{/each}}
-
-      {{else}}
-        <div class="house-unit-card card-action">
-          Add Units
-        </div>
+          {{/link-to}}
+        {{/each}}
         {{/if}}
       </div>
-    </div>
-  </div>
+
+</div><!--row-->
 {{/each}}
-
-
-{{!-- {{#each housesData as |house|}}
-<div class="row">
-  <div class="col s12">
-    <div class="card">
-      <div class="card-content container">
-
-        <!-- Street heading with link to house-details-->
-        <div class="card-title">
-          {{#link-to 'house' house.id}}
-          <h4 class="center-align">
-            {{house.street_name}}
-            <!-- Make this clickable -->
-            <i class="material-icons right">more_vert</i>
-          </h4>
-          {{/link-to}}
-        </div>
-
-        <div class="divider">
-        </div>
-
-        <!-- Revenue Line -->
-        <div class="col s12 center-align">
-          <h4 class="house-net-revenue">$12,032</h4>
-          <p>NET REVENUE</p>
-        </div>
-
-        <!-- Two care panels-->
-        <div class="row">
-          <div class="col s12 m6">
-            <div class="card-panel teal">
-              <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-              </span>
-            </div>
-          </div>
-
-          <div class="col s12 m6">
-            <div class="card-panel teal">
-              <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div class="divider">
-        </div>
-
-    <!-- Ember helpers to determine actions based on if houses have units or not -->
-    {{#if house.units}}
-
-        {{#each house.units as |unit|}}
-        <!-- Each unit will have a link -->
-        {{#link-to 'unit' unit.id}}
-        <div class="row">
-          <div class="card-panel teal valign-wrapper">
-            <div class="col s2">
-              {{unit.unit_num}}
-            </div>
-            <div class="col s9">
-              content here
-            </div>
-          </div>
-        </div>
-        {{/link-to}}
-        {{/each}}
-
-
-    {{else}}
-        <!-- Shows add button if house does not have unit -->
-        <div class="row">
-          <div class="col s12">
-            <div class="card-panel grey center-align">
-              <p>You have not entered any units for this property</p>
-              <!-- Currently links to new-property route.
-                    Need to make link to new unit route Component -->
-              {{#link-to 'new-property'}}
-              <a class="waves-effect waves-light btn">Add Units</a>
-              {{/link-to}}
-            </div>
-          </div>
-        </div>
-
-    {{/if}}
-
-      </div> <!-- card-content-->
-    </div>
-  </div>
-</div>
-{{/each}} --}}

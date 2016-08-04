@@ -10,7 +10,9 @@ ember-application {
   min-height: 100%;
   height: auto;
 }
+.container {
 
+}
 #navigation-bar {
   margin-bottom: 25px;
 }
@@ -26,17 +28,14 @@ ember-application {
   position: absolute;
   padding-top: 20px;
 }
-
-.house-quick-info-container {
+.all-property-card {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
   flex-wrap: wrap;
-  .card-panel {
-    overflow: hidden;
-  }
 }
-.house-unit-card.card-action {
-  padding: 15px;
+.unit-card-content {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
-
-// .house-cards {
-//   padding-bottom: 25px;
-// }
