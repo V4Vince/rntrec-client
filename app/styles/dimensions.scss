@@ -27,15 +27,15 @@ ember-application {
   padding-top: 20px;
 }
 
-.form-horizontal {
-  width: 60%;
-  margin: 0 auto 100px;
+.house-quick-info-container {
+  flex-wrap: wrap;
+  .card-panel {
+    overflow: hidden;
+  }
 }
-
-.card-content {
-  padding-bottom: 25px;
+.house-unit-card.card-action {
+  padding: 15px;
 }
-
 
 // .house-cards {
 //   padding-bottom: 25px;

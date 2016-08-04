@@ -13,10 +13,19 @@
 <!-- Still need to:
       1. Format UI
       2. Create a delete button
+
+      3. Inject house info into the heading of unit-details
 -->
-{{#each house.units as |unit|}}
+{{!-- {{#each house.units as |unit|}}
   <li>{{#link-to 'unit' unit}}UNIT {{unit.unit_num}}{{/link-to}}</li>
+{{/each}} --}}
+
+{{#each house.units as |unit|}}
+{{#md-collection house=house as |house|}}
+  {{link-to house.unit house.route class='collection-item'}}
+{{/md-collection}}
 {{/each}}
+
 
 
 

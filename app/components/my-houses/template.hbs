@@ -1,4 +1,92 @@
+
+
 {{#each housesData as |house|}}
+
+
+<div class="row">
+  <div class="col s12">
+    <div class="card white darken-1">
+
+      <div class="card-content house-card">
+        {{#link-to 'house' house.id}}
+        <span id="house-name-card-title" class="card-title">{{house.street_name}}</span>
+        {{/link-to}}
+
+        <div class="divider">
+        </div>
+
+        <div class="house-quick-info-container row">
+
+          <div class="col s6 m3">
+            <div class="card-panel">
+              <span class="house-quick-info ">
+                <p>$12,000</p>
+              </span>
+              <span class="subscript">
+                <p>Net Revenue</p>
+              </span>
+            </div>
+          </div>
+
+          <div class="col s6 m3">
+            <div class="card-panel">
+              <span class="house-quick-info white">
+                <p>5/6</p>
+              </span>
+              <span class="subscript">
+                <p>Active Units</p>
+              </span>
+            </div>
+          </div>
+
+          <div class="col s6 m3">
+            <div class="card-panel">
+              <span class="house-quick-info ">
+                <p>$12,000</p>
+              </span>
+              <span class="subscript">
+                <p>Net Revenue</p>
+              </span>
+            </div>
+          </div>
+
+          <div class="col s6 m3">
+            <div class="card-panel">
+              <span class="house-quick-info white">
+                <p>5/6</p>
+              </span>
+              <span class="subscript">
+                <p>Active Units</p>
+              </span>
+            </div>
+          </div>
+
+        </div><!-- house-quick-info-container row -->
+      </div><!-- card-content -->
+
+      {{#if house.units}}
+      {{#each house.units as |unit|}}
+
+      {{#link-to "unit" unit.id}}
+        <div class="house-unit-card card-action">
+          <span class="unit-subscript">Unit</span> {{unit.unit_num}}
+        </div>
+      {{/link-to}}
+
+      {{/each}}
+
+      {{else}}
+        <div class="house-unit-card card-action">
+          Add Units
+        </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+{{/each}}
+
+
+{{!-- {{#each housesData as |house|}}
 <div class="row">
   <div class="col s12">
     <div class="card">
@@ -87,4 +175,4 @@
     </div>
   </div>
 </div>
-{{/each}}
+{{/each}} --}}

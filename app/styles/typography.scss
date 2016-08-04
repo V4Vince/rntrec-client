@@ -1,8 +1,18 @@
-span.card-title.street-name{
-  font-weight: 500;
+.card-panel {
+  text-align: center;
 }
-.house-unit-card{
-  font-size: 1.2em;
+
+#house-name-card-title {
+  font-size: 2em;
+  font-weight: 500;
+  color: black;
+}
+.card-action.house-unit-card {
+  font-size: 1.5em;
+  color: white;
+}
+.unit-subscript {
+  font-size: 0.7em;
 }
 
 .details-house-name {
@@ -11,11 +21,10 @@ span.card-title.street-name{
 .house-net-revenue {
   margin-bottom: 5px;
 }
-#details-unit-num {
-  margin-top: 50px;
-  margin-bottom: 25px;
-}
+
 .divider {
-  margin-top: 25px;
-  margin-bottom: 25px;
+  margin-top: 15px;
+}
+.house-quick-info{
+  font-size: 1.7em;
 }
