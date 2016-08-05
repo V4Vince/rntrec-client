@@ -18,7 +18,7 @@ ember-application {
 }
 
 #main-content  {
-  padding-bottom: 250px;
+  padding-bottom: 400px;
 }
 
 #footer {
@@ -34,8 +34,23 @@ ember-application {
   -webkit-flex-direction: row;
   flex-direction: row;
   flex-wrap: wrap;
+  .unit-quick-info-card {
+    margin-bottom: 20px;
+  }
 }
+
 .unit-card-content {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.row {
+  margin-bottom: 0;
+}
+
+.add-unit-button {
+
+}
+.unit-number.card-panel {
   padding-top: 10px;
   padding-bottom: 10px;
 }

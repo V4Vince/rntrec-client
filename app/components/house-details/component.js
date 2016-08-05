@@ -39,6 +39,7 @@ export default Ember.Component.extend({
       reset () {
         this.set('unitParams', {});
         console.log("reset check");
+        this.set('addUnit', false);
       },
 
       delete(){

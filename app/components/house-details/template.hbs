@@ -1,22 +1,136 @@
-<h4>Property Details</h4>
+<h5>{{house.street_name}}</h5>
+
 <div class="row">
-  <div class="col s12 m9">
-    <div class="card white darken-1">
-      <div class="card-content house-card">
-        <span id="house-name-card-title" class="card-title">{{house.street_name}}</span>
-        {{delete-button delete="delete"}}
+  <div class="col s12 l5">
+    <div class="card xsmall">
+      <div class="card-content activator">
+        <span class="card-title grey-text text-darken-4">Earned<i class="material-icons right">more_vert</i></span>
+        <h4 class="center-align activator">$1,230</h4>
+      </div>
+      <div class="card-action">
+        Details
+      </div>
+      <div class="card-reveal activator">
+        <span class="card-title grey-text text-darken-4">Earned since<i class="material-icons right">close</i></span>
+        <p>Break down how the number is calculated</p>
       </div>
     </div>
   </div>
-  <div class="col s12 m2">
-    <div class="card teal darken-1">
+
+  <div class="col s12 l5">
+    <div class="card xsmall">
+      <div class="card-content activator">
+        <span class="card-title grey-text text-darken-4">Spent<i class="material-icons right">more_vert</i></span>
+        <h4 class="center-align activator">$930</h4>
+      </div>
+      <div class="card-action">
+        Details
+      </div>
+      <div class="card-reveal activator">
+        <span class="card-title grey-text text-darken-4">Spent since<i class="material-icons right">close</i></span>
+        <p>Break down how the number is calculated</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 l2">
+    <div class="card white darken-1">
+        <ul class="collection">
+          <li class="collection-item">Beds:</li>
+          <li class="collection-item">Baths:</li>
+          <li class="collection-item">Units:</li>
+          <li class="collection-item">Purchase Price: $210,000</li>
+        </ul>
+    </div>
+  </div>
+</div><!--row-->
+
+<div class="row">
+  <div class="col s12">
+    <div class="card white darken-1">
       <div class="card-content house-card">
-        <span id="house-name-card-title" class="card-title">{{house.street_name}}</span>
-        {{delete-button delete="delete"}}
+        <span class="card-title">Money Details</span>
+        <div class="divider"></div>
+        <div class="earnings row">
+          <div class="col s12">
+            <h6>EARNINGS</h6>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="earnings row">
+          <div class="col s12">
+            <h6>EXPENSES</h6>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+<div class="row">
+  <div class="col s12">
+    <div class="card white darken-1">
+      <div class="card-content house-card">
+        <div class="card-title">Units</div>
+
+        <div class="row">
+          <div class="container">
+
+        <div class="col s6 m3 center">
+          <h4>3/5</h4>
+          <h6>Active Units</h6>
+        </div>
+        <div class="col s6 m3 center">
+          <h4>2</h4>
+          <h6>Incoming Rent</h6>
+        </div>
+        <div class="col s6 m3 center">
+          <h4>3</h4>
+          <h6>Reminders</h6>
+        </div>
+        <div class="col s6 m3 center">
+          <h4>3/5</h4>
+          <h6>Active Units</h6>
+        </div>
+        </div>
+      </div>
+    </div><!--card-content house-card-->
+
+      <div class="collection">
+        {{#each house.units as |unit|}}
+        {{#link-to 'unit' unit.id}}
+        <a href="#!" class="collection-item">
+          <div class="row">
+          <div class="col s3 m2">
+            <div class="unit-number card-panel">
+              <span class="title">
+                <h5 class="">{{unit.unit_num}}</h5>
+              </span>
+            </div>
+          </div>
+          <div class="col s8 valign">
+            <h5>Unit# {{unit.unit_num}}</h5>
+            <h6>August 1, 2016 - July 31, 2017</h6>
+          </div>
+        </div>
+        </a>
+        {{/link-to}}
+        {{/each}}
+      </div><!--collection-->
+      {{#unless addUnit}}
+        {{md-btn text='Add Unit'
+          action='add'
+          buttonType='large'
+          class='col s12
+                 blue white-text
+                 text-darken-3
+                 add-unit-button' }}
+      {{/unless}}
+
+    </div><!--card-->
+  </div>
+</div>
+
 
 
 <!-- Still need to:
@@ -26,18 +140,8 @@
       3. Inject house info into the heading of unit-details
 -->
 
-{{#each house.units as |unit|}}
-
-{{/each}}
 
 
-
-
-{{#unless addUnit}}
-  {{md-btn text='Add Unit'
-    action='add'
-    class='blue white-text text-darken-3'}}
-{{/unless}}
 
 {{#if addUnit}}
   {{new-property/units
