@@ -9,6 +9,7 @@ export default Ember.Component.extend({
   //delete <- from house route
   unitParams: {},
   addUnit: false,
+  showOptions: false,
 
 //Still need to create actions for:
 //1.option to create a house and its units and contracts at the same time.
@@ -40,6 +41,15 @@ export default Ember.Component.extend({
         this.set('unitParams', {});
         console.log("reset check");
         this.set('addUnit', false);
+      },
+
+      open (){
+        let isShown = this.get('showOptions');
+        if (isShown) {
+          this.set('showOptions', false);
+        } else {
+          this.set('showOptions', true);
+        }
       },
 
       delete(){

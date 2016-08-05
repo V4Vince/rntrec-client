@@ -1,4 +1,18 @@
-<h5>{{house.street_name}}</h5>
+<div class="row">
+  <div class="col s6">
+    <h5 style="display: inline-block">{{house.street_name}}
+    </h5>
+  </div>
+    <div class="col s6 ">
+    <a class="options-button btn-flat right" {{action "open"}}>
+      <img class="options-icon" src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_mode_edit_48px-128.png" alt="" />
+    </a>
+  </div>
+  {{options-button delete="delete" showOptions=showOptions title="Property Options"}}
+  {{!-- <div class="col s7 m9 pull-m1">
+    <span class="left">{{options-button showOptions=showOptions delete="delete"}}</span>
+  </div> --}}
+</div>
 
 <div class="row">
   <div class="col s12 l5">
@@ -7,8 +21,8 @@
         <span class="card-title grey-text text-darken-4">Earned<i class="material-icons right">more_vert</i></span>
         <h4 class="center-align activator">$1,230</h4>
       </div>
-      <div class="card-action">
-        Details
+      <div class="details card-action">
+        <button class="waves-effect waves-teal btn-flat btn-large details-button">Details</button>
       </div>
       <div class="card-reveal activator">
         <span class="card-title grey-text text-darken-4">Earned since<i class="material-icons right">close</i></span>
@@ -23,8 +37,8 @@
         <span class="card-title grey-text text-darken-4">Spent<i class="material-icons right">more_vert</i></span>
         <h4 class="center-align activator">$930</h4>
       </div>
-      <div class="card-action">
-        Details
+      <div class="details card-action">
+        <button class="waves-effect waves-teal btn-flat btn-large details-button">Details</button>
       </div>
       <div class="card-reveal activator">
         <span class="card-title grey-text text-darken-4">Spent since<i class="material-icons right">close</i></span>
@@ -52,14 +66,20 @@
         <span class="card-title">Money Details</span>
         <div class="divider"></div>
         <div class="earnings row">
-          <div class="col s12">
+          <div id="earnings" class="col s12">
             <h6>EARNINGS</h6>
+            <p class="flow-text center-align">
+              Details earning information here. Might include graphs, charts, grapgics etc. This section might be extensive.
+            </p>
           </div>
         </div>
-        <div class="divider"></div>
+        <div class="expense-earnings divider"></div>
         <div class="earnings row">
           <div class="col s12">
             <h6>EXPENSES</h6>
+            <p class="flow-text center-align">
+              Details expense information here. Might include graphs, charts, grapgics etc. This section might be extensive.
+            </p>
           </div>
         </div>
       </div>

@@ -1,0 +1,25 @@
+{{#if showOptions}}
+    {{#md-modal close='closeModal'}}
+    <div class="modal-fixed-footer">
+      <div class="modal-content center-align">
+        <!-- Placeholder for title of modal-->
+        <h4>{{title}}</h4>
+        <!-- Placeholder for body of modal-->
+        {{md-btn text='Edit'
+          class='teal
+                 white-text
+                 text-darken-3
+                 col s10'
+          button='large'}}
+        {{md-btn text='Delete'
+          class='red
+                 white-text
+                 text-darken-3
+                 col s10'
+          button='large'
+          action="delete"}}
+
+      </div>
+    </div>
+    {{/md-modal}}
+{{/if}}

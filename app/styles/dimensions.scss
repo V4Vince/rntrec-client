@@ -10,9 +10,7 @@ ember-application {
   min-height: 100%;
   height: auto;
 }
-.container {
 
-}
 #navigation-bar {
   margin-bottom: 25px;
 }
@@ -28,6 +26,7 @@ ember-application {
   position: absolute;
   padding-top: 20px;
 }
+
 .all-property-card {
   display: -webkit-flex;
   display: flex;
@@ -43,14 +42,43 @@ ember-application {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
 .row {
   margin-bottom: 0;
 }
 
-.add-unit-button {
-
+.card-action.details {
+  padding: 0px;
 }
+
+button.btn-flat.details-button {
+  width: 100%;
+}
+
 .unit-number.card-panel {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.options-button.btn-flat {
+  padding-left: 10px;
+  padding-right: 0;
+  .options-icon {
+    padding-top: 10px;
+    height: 40px;
+    width: auto;
+    display: inline;
+  }
+}
+
+.option-button-contents {
+  display: inline-block;
+  > a {
+    margin: 0 5px;
+  }
+}
+
+.expense-earnings.divider {
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
