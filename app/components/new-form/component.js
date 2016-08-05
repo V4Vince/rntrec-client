@@ -15,9 +15,11 @@ export default Ember.Component.extend({
 
 //Sends action to new-property route
   actions: {
+    //Sends submit action with houseParams to new-property component
     submit () {
       this.sendAction('submit', this.get('houseParams'));
     },
+    //resets the houseParams form
     reset () {
       this.set('houseParams', {});
       console.log("hi");
