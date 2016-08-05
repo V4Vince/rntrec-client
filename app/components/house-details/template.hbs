@@ -1,20 +1,20 @@
 <div class="row">
-<!--Property Name-->
-<div class="col s6">
-  <h5 style="display: inline-block">{{house.street_name}}
-  </h5>
-</div>
-<!--Clickable options button near the property name-->
-<div class="col s6 ">
-  <a class="options-button btn-flat right" {{action "open"}}>
-    <img class="options-icon" src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_mode_edit_48px-128.png" alt="" />
-  </a>
-</div>
-<!--Where the options Modal component will appear-->
-{{options-button
-  delete="delete"
-  showOptions=showOptions
-  title="Property Options" }}
+  <!--Property Name-->
+  <div class="col s6">
+    <h5 style="display: inline-block">{{house.street_name}}
+    </h5>
+  </div>
+  <!--Clickable options button near the property name-->
+  <div class="col s6 ">
+    <a class="options-button btn-flat right" {{action "open"}}>
+      <img class="options-icon" src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_mode_edit_48px-128.png" alt="" />
+    </a>
+  </div>
+  <!--Where the options Modal component will appear-->
+  {{options-button
+    delete="delete"
+    showOptions=showOptions
+    title="Property Options" }}
 </div><!--row-->
 
 <!--First row of cards-->
@@ -109,6 +109,24 @@
     </div>
   </div><!--End of column defines how large the Money Detail card will be-->
 </div><!--End of second row of cards-->
+
+<div class="row">
+  <div class="col s12">
+    <div class="card white darken-1">
+      <!--History card contents-->
+      <div class="card-content house-card">
+        <div class="card-title">History</div>
+        <!--History info row-->
+        <div class="row">
+          <div class="container flow-text center-align">
+            Graphs here to show history of property
+          </div>
+        </div><!--End of histroy info row-->
+      </div><!--card-content history-->
+    </div><!--card-->
+  </div>
+</div>
+
 
 <!--THRID ROW OF CARDS-->
 <div class="row">
