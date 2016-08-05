@@ -1,18 +1,19 @@
 {{#each housesData as |house|}}
-
     <div class="row all-property-card">
       <div class="col s12 l10">
         <div class="card white darken-1">
+          <!--house card content-->
           <div class="card-content house-card">
+            <!--Links to specific house-->
             {{#link-to 'house' house.id}}
-            <span id="house-name-card-title" class="card-title">{{house.street_name}}</span>
+              <span id="house-name-card-title" class="card-title">{{house.street_name}}</span>
             {{/link-to}}
-            <span class="right">{{options-button}}</span>
+            <!--Divider-->
+            <div class="divider"></div>
 
-            <div class="divider">
-            </div>
-
+            <!--House quick-info row-->
             <div class="house-quick-info-container row">
+              <!--Net-revenue block-->
               <div class="col s6 m4">
                 <div class="card-panel">
                   <span class="house-quick-info ">
@@ -23,7 +24,7 @@
                   </span>
                 </div>
               </div>
-
+              <!--Active units block-->
               <div class="col s6 m4">
                 <div class="card-panel">
                   <span class="house-quick-info white">
@@ -34,7 +35,7 @@
                   </span>
                 </div>
               </div>
-
+              <!--Net-revenue block-->
               <div class="col s6 m4">
                 <div class="card-panel">
                   <span class="house-quick-info ">
@@ -45,7 +46,7 @@
                   </span>
                 </div>
               </div>
-
+              <!--Active units block-->
               <div class="col s6 m4">
                 <div class="card-panel">
                   <span class="house-quick-info white">
@@ -58,23 +59,24 @@
               </div>
 
             </div><!-- house-quick-info-container row -->
-          </div><!-- card-content -->
+          </div><!-- house card-content -->
         </div><!--card-->
       </div><!--col-->
 
+      <!--Unit with clickable link block-->
       <div class="unit-quick-info-card col s12 l2">
         {{#if house.units}}
         {{#each house.units as |unit|}}
           {{#link-to "unit" unit.id}}
-          <div class="card z-depth-2">
-            <div class="unit-card-content center-align flow-text">
-              <span class="unit-subscript">Unit</span> {{unit.unit_num}}
+            <div class="card z-depth-2">
+              <div class="unit-card-content center-align flow-text">
+                <span class="unit-subscript">Unit</span> {{unit.unit_num}}
+              </div>
             </div>
-          </div>
           {{/link-to}}
         {{/each}}
         {{/if}}
       </div>
 
-</div><!--row-->
+    </div><!--row-->
 {{/each}}
