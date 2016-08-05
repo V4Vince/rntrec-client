@@ -1,4 +1,11 @@
 {{#each sortedProperty as |house|}}
+<!--Checks to see if the house has an ID, if it doesnt then skip it.
+
+    **This is a workaround for duplicate record issue.
+    Issue: Whenever a new record that has a hasMany is created,
+    ember shows two of the newly created record (one from the
+    server and one with an ID of null)-->
+{{#if house.id}}
     <div class="row all-property-card">
       <div class="col s12 l10">
         <div class="card white darken-1">
@@ -79,4 +86,5 @@
       </div>
 
     </div><!--row-->
+{{/if}}
 {{/each}}
