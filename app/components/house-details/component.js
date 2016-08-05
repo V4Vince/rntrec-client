@@ -7,19 +7,20 @@ export default Ember.Component.extend({
   //house   <- from house route
   //addUnit <- from house route
   //delete <- from house route
-  unitParams: {},
-  addUnit: false,
-  showOptions: false,
+  unitParams: {},     //from new-property/units component
+  addUnit: false,     //from new-property/units component
+  showOptions: false, //from options-button component
 
 //Still need to create actions for:
 //1.option to create a house and its units and contracts at the same time.
 
   actions: {
+      //to show add-unit form
       add: function(){
         this.set('addUnit', true);
         this.set('unitParams', {});
       },
-      //creating a record that has a belongs to relationship
+      //creating a unit record that has a belongs to relationship with house
       submit () {
         let id = this.get('house.id');
         let unitParams = this.get('unitParams');
@@ -37,12 +38,13 @@ export default Ember.Component.extend({
           .danger('There was a problem. Please try again.');
         });
       },
+      //resets the and hides the add-unit form
       reset () {
         this.set('unitParams', {});
         console.log("reset check");
         this.set('addUnit', false);
       },
-
+      //opens the option modal
       open (){
         let isShown = this.get('showOptions');
         if (isShown) {
@@ -51,7 +53,7 @@ export default Ember.Component.extend({
           this.set('showOptions', true);
         }
       },
-
+      //sends the delete option to the house route to delete this house
       delete(){
         let thisProperty = this.get('house');
         this.sendAction('delete', thisProperty);
