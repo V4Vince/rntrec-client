@@ -9,12 +9,12 @@
 
 <div class="row">
   <!--Property Name and Unit Number-->
-  <div class="col s6">
+  <div class="col s10">
     <h5 style="display: inline-block">{{unitData.house.street_name}}</h5>
     <h4><span class="unit-num-heading">unit</span> {{unitData.unit_num}}</h4>
   </div>
   <!--Clickable options button near the property name-->
-  <div class="col s6 ">
+  <div class="col s2 ">
     <a class="options-button btn-flat right" {{action "open"}}>
       <img class="options-icon" src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_mode_edit_48px-128.png" alt="" />
     </a>
@@ -96,6 +96,10 @@
           </div>
         </div><!--End of current-lease info row-->
       </div><!--card-content current-lease-->
+      <!--View contract button under the active lease-->
+      <div class="details card-action">
+        <button class="waves-effect waves-teal btn-flat btn-large details-button">VIEW CONTRACT</button>
+      </div>
     </div><!--card-->
   </div>
 </div>

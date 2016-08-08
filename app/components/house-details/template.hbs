@@ -1,11 +1,11 @@
 <div class="row">
   <!--Property Name-->
-  <div class="col s6">
+  <div class="col s10">
     <h4 style="display: inline-block">{{house.street_name}}
     </h4>
   </div>
   <!--Clickable options button near the property name-->
-  <div class="col s6 ">
+  <div class="col s2 ">
     <a class="options-button btn-flat right" {{action "open"}}>
       <img class="options-icon" src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_mode_edit_48px-128.png" alt="" />
     </a>
@@ -14,7 +14,7 @@
   {{options-button
     delete="delete"
     showOptions=showOptions
-    title="Property Options" }}
+    title=house.street_name }}
 </div><!--row-->
 
 <!--First row of cards-->
