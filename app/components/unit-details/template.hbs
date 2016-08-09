@@ -99,9 +99,10 @@
       <div class="details card-action">
         <button class="waves-effect waves-teal btn-flat btn-large details-button" {{action "openContract"}}>VIEW CONTRACT</button>
       </div>
-      {{app-modal
-        title="Contract"
-        showContract=showContract }}
+      {{contract-card
+        unitData=unitData
+        showContract=showContract
+        unitContract=unitData.contract }}
     </div><!--card-->
   </div>
 </div>

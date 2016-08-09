@@ -1,13 +1,13 @@
 
 <!--Show if modalIsOpen is true-->
-{{#if showContract}}
+{{#if modalIsOpen}}
   {{#md-modal close='closeModal'}}
     <div class="modal-fixed-footer">
       <div class="modal-content">
         <!-- Placeholder for title of modal-->
         <h3>{{title}}</h3>
         <!-- Placeholder for body of modal-->
-        <p>{{yield}}</p>
+        <p></p>
       </div>
       <div class="modal-footer">
       {{#link-to 'new-property'}}
