@@ -6,5 +6,6 @@ export default DS.Model.extend({
   num_bathrooms: DS.attr('number'),
   num_parking: DS.attr('number'),
   expense: DS.attr('number'),
-  house: DS.belongsTo('house')
+  house: DS.belongsTo('house'),
+  contract: DS.belongsTo('contract')
 });

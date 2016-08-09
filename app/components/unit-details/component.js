@@ -7,6 +7,7 @@ export default Ember.Component.extend({
   //house   <- from house route
   //addUnit <- from house route
   //delete <- from house route
+  showContract: false,
   unitParams: {},     //from new-property/units component
   addUnit: false,     //from new-property/units component
   showOptions: false, //from options-button component
@@ -52,6 +53,15 @@ export default Ember.Component.extend({
         } else {
           this.set('showOptions', true);
         }
+      },
+      openContract (){
+        let showContract = this.get('showContract');
+        if (showContract) {
+          this.set('showContract', false);
+        } else {
+          this.set('showContract', true);
+        }
+        console.log(this.get('showContract'));
       },
       //sends the delete option to the house route to delete this house
       delete(){

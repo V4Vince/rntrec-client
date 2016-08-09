@@ -5,5 +5,5 @@ export default Ember.Component.extend({
 
   sortPropertyBy: ['street_name'],
   sortedProperty: Ember.computed.sort('housesData', 'sortPropertyBy'),
-  
+
 });

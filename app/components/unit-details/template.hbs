@@ -6,7 +6,6 @@
     5. Need to create adds money function
     6. Need to add D3.js-->
 
-
 <div class="row">
   <!--Property Name and Unit Number-->
   <div class="col s10">
@@ -98,8 +97,11 @@
       </div><!--card-content current-lease-->
       <!--View contract button under the active lease-->
       <div class="details card-action">
-        <button class="waves-effect waves-teal btn-flat btn-large details-button">VIEW CONTRACT</button>
+        <button class="waves-effect waves-teal btn-flat btn-large details-button" {{action "openContract"}}>VIEW CONTRACT</button>
       </div>
+      {{app-modal
+        title="Contract"
+        showContract=showContract }}
     </div><!--card-->
   </div>
 </div>
