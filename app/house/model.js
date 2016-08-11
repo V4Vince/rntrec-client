@@ -5,5 +5,8 @@ export default DS.Model.extend({
   num_units: DS.attr('number'),
   purchase_price: DS.attr('number'),
   current_price: DS.attr('number'),
+  mortgage: DS.attr('number'),
+  taxes: DS.attr('number'),
+  insurance: DS.attr('number'),
   units: DS.hasMany('unit'),
 });
