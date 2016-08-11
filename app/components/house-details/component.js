@@ -1,64 +1,27 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  flashMessages: Ember.inject.service(),
-  store: Ember.inject.service(),
-  tagName: 'form',
-  //house   <- from house route
-  //addUnit <- from house route
+  //house <- from house route
+  //unitParams
   //delete <- from house route
-  unitParams: {},     //from new-property/units component
-  addUnit: false,     //from new-property/units component
-  showOptions: false, //from options-button component
-
-//Still need to create actions for:
-//1.option to create a house and its units and contracts at the same time.
+  addUnit: false,
+  showOptions: false,
 
   actions: {
-      //to show add-unit form
-      add: function(){
-        this.set('addUnit', true);
-        this.set('unitParams', {});
+    //add unit button
+    add: function(){
+      this.set('addUnit', true);
+      this.set('unitParams', {});
+    },
+    //opens option modal
+    open: function(){
+      this.set('showOptions', true);
+      console.log(this.get('showOptions'));
+    },
+    //sends the delete action with the property to the house route to delete this property
+    delete(){
+      let thisProperty = this.get('house');
+      this.sendAction('delete', thisProperty);
       },
-      //creating a unit record that has a belongs to relationship with house
-      submit () {
-        let id = this.get('house.id');
-        let unitParams = this.get('unitParams');
-        let house = this.get('store').peekRecord('house', id);
-        let unit = this.get('store').createRecord('unit', unitParams);
-        house.get('units').pushObject(unit);
-        return unit.save()
-        .then(() => this.set('addUnit', false))
-        .then(() => {
-          this.get('flashMessages')
-          .success('Successfully added a unit');
-        })
-        .catch(() => {
-          this.get('flashMessages')
-          .danger('There was a problem. Please try again.');
-        });
-      },
-      //resets the and hides the add-unit form
-      reset () {
-        this.set('unitParams', {});
-        console.log("reset check");
-        this.set('addUnit', false);
-      },
-      //opens the option modal
-      open (){
-        let isShown = this.get('showOptions');
-        if (isShown) {
-          this.set('showOptions', false);
-        } else {
-          this.set('showOptions', true);
-        }
-      },
-      //sends the delete option to the house route to delete this house
-      delete(){
-        let thisProperty = this.get('house');
-        this.sendAction('delete', thisProperty);
-        },
-
-    }, //actions
-
-}); //Ember.Component
+  },
+});

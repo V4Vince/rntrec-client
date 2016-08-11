@@ -1,15 +1,17 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  //delete <-from the unit-details component or house-details component
+  //showOptions <-from the unit-details component or house-details component
   actions: {
+    //sends the delete action to the component that's calling it.
+    //refactor this later by using closure action
     delete(){
-      let thisProperty = this.get('house');
-      this.sendAction('delete', thisProperty);
+      this.sendAction('delete', {});
       },
-    open: function(){
-      this.set('showOptions', true);
-      console.log(this.get('showOptions'));
-    },
+
+    //add edit action here
+
     closeModal: function(){
       this.set('showOptions', false);
     },

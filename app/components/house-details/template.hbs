@@ -14,7 +14,8 @@
   {{options-button
     delete="delete"
     showOptions=showOptions
-    title=house.street_name }}
+    title=house.street_name
+    action="open"}}
 </div><!--row-->
 
 <!--First row of cards-->
@@ -210,23 +211,9 @@
   <!--Add unit form-->
   {{new-property/units
     house=house
-    addUnit=addUnit
-    unitParams=unitParams
+    addUnit=addUnit }}
 
-    unit_num=unitParams.unit_num
-    num_bedrooms=unitParams.num_bedrooms
-    num_bathrooms=unitParams.num_bathrooms
-    num_parking=unitParams.num_parking }}
 
-  <!--Add unit submit button-->
-  {{md-btn text='Submit'
-    action='submit'
-    class='blue white-text text-darken-3'}}
-
-  <!--Add unit cancel button-->
-  {{md-btn text='Cancel'
-    action='reset'
-    class='red white-text text-darken-3'}}
 
 {{/if}}
 
