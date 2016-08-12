@@ -1,37 +1,43 @@
-<!-- Inject field forms for creating houses here by generating their components:
-     Street address (done)
-     Mortgage amount (done)
-     Number of units (done)
-     etc
+<!--
+    TO DO:
+    1.Import from newproperty/building instead of add-property-form (DONE)
+    2.Must revise new-property/building to be like add-property-form -->
 
-    Also have option to add unit details here -->
-
-{{md-input value=street_name
+{{md-input value=houseParams.street_name
     label="Street Name"
     type='text'
     class="col s12"
     validate=true}}
 
-{{md-input value=mortgage
+{{md-input value=houseParams.mortgage
     label="Monthly Mortgage"
     type='number'
     class="col s6"
     validate=true}}
 
-{{md-input value=taxes
+{{md-input value=houseParams.taxes
     label="Monthly Taxes"
     type='number'
     class="col s6"
     validate=true}}
 
-{{md-input value=insurance
+{{md-input value=houseParams.insurance
     label="Monthly Insurance"
     type='number'
     class="col s6"
     validate=true}}
 
-{{md-input value=num_units
+{{md-input value=houseParams.num_units
     label="Number of units"
     type='number'
     class="col s6"
     validate=true}}
+
+
+{{md-btn text='Submit'
+  action='submit'
+  class='blue white-text text-darken-3'}}
+
+{{md-btn text='Cancel'
+  action='reset'
+  class='red white-text text-darken-3'}}
