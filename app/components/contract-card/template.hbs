@@ -3,7 +3,7 @@
   {{#md-modal close='closeModal'}}
     <div class="modal-fixed-footer">
       <div class="modal-content">
-        {{#if unitContract}}
+        {{#if unitData.contract}}
         <div class="hasContract">
           <!-- Placeholder for title of modal-->
           <h5 class="flow-text">Lease Contract</h5>
@@ -12,13 +12,13 @@
           <!-- Placeholder for body of modal-->
           <p>Term:
             <br>
-            Start: {{unitContract.start}}
+            Start: {{unitData.contract.start}}
             <br>
-            End: {{unitContract.start}}
+            End: {{unitData.contract.end}}
             <br>
-            Rent: {{unitContract.rent}}
+            Rent: {{unitData.contract.rent}}
             <br>
-            Security: {{unitContract.security}}
+            Security: {{unitData.contract.security}}
           </p>
         </div>
         {{else}}

@@ -8,5 +8,6 @@ export default DS.Model.extend({
   mortgage: DS.attr('number'),
   taxes: DS.attr('number'),
   insurance: DS.attr('number'),
-  units: DS.hasMany('unit'),
+  //async false because units is embedded
+  units: DS.hasMany('unit', { async: false }),
 });
