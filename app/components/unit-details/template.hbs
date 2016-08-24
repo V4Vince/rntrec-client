@@ -153,7 +153,10 @@
           <div class="col s12">
             <h6>EXPENSES</h6>
             <p class="flow-text center-align">
-              Details expense information here. Might include graphs, charts, grapgics etc. This section might be extensive.
+              {{#each unitData.expenses as |expense|}}
+              <li>expense: {{expense.expense_for}}</li>
+              <li>expense amount: {{expense.expense_amount}}</li>
+              {{/each}}
             </p>
           </div>
         </div><!--end expenses row-->

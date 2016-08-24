@@ -5,7 +5,7 @@ export default DS.Model.extend({
   num_bedrooms: DS.attr('number'),
   num_bathrooms: DS.attr('number'),
   num_parking: DS.attr('number'),
-  expense: DS.attr('number'),
   house: DS.belongsTo('house'),
-  contract: DS.belongsTo('contract', { async: false })
+  contract: DS.belongsTo('contract', { async: false }),
+  expenses: DS.hasMany('expense', { async: false }),
 });

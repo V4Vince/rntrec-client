@@ -10,4 +10,5 @@ export default DS.Model.extend({
   insurance: DS.attr('number'),
   //async false because units is embedded
   units: DS.hasMany('unit', { async: false }),
+  expenses: DS.hasMany('expense', { async: false }),
 });

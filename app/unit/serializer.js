@@ -3,7 +3,7 @@ import { ActiveModelSerializer } from 'active-model-adapter';
 
 export default ActiveModelSerializer.extend(DS.EmbeddedRecordsMixin, {
   attrs: {
-
-    contract: { embedded: 'always'}
+    expenses: {embedded: 'always' },
+    contract: { embedded: 'always'},
   }
 });
