@@ -17,6 +17,7 @@ Router.map(function () {
   this.route('new-property');
   this.route('contracts');
   this.route('contract', { path: '/contracts/:contract_id'});
+  this.route('expenses');
 });
 
 export default Router;

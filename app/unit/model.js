@@ -7,5 +7,5 @@ export default DS.Model.extend({
   num_parking: DS.attr('number'),
   expense: DS.attr('number'),
   house: DS.belongsTo('house'),
-  contract: DS.belongsTo('contract')
+  contract: DS.belongsTo('contract', { async: false })
 });

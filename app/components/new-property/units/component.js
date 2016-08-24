@@ -14,14 +14,15 @@ export default Ember.Component.extend({
         let unitParams = this.get('unitParams');
         let house = this.get('store').peekRecord('house', id);
         let unit = this.get('store').createRecord('unit', unitParams);
-        house.get('units').pushObject(unit);
-        return unit.save()
+        let newHouse = house.get('units').pushObject(unit);
+        newHouse.save()
         .then(() => this.set('addUnit', false))
         .then(() => {
           this.get('flashMessages')
           .success('Successfully added a unit');
         })
-        .catch(() => {
+        .catch((data) => {
+          console.log(data);
           this.get('flashMessages')
           .danger('There was a problem. Please try again.');
         });
