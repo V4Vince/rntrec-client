@@ -97,12 +97,17 @@
       </div><!--card-content current-lease-->
       <!--View contract button under the active lease-->
       <div class="details card-action">
+        {{#if unitData.contract}}
         <button class="waves-effect waves-teal btn-flat btn-large details-button" {{action "openContract"}}>VIEW CONTRACT</button>
+        {{else}}
+        <button class="waves-effect waves-teal btn-flat btn-large details-button" {{action "newContract"}}>NEW  CONTRACT</button>
+        {{/if}}
       </div>
       {{contract-card
         unitData=unitData
         showContract=showContract
-        unitData=unitData }}
+        showContractForm=showContractForm
+         }}
     </div><!--card-->
   </div>
 </div>

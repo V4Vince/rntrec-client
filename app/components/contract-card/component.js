@@ -2,7 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   //unitData <- from unit-details component
-
+  //showContract <- from unit-details component
+  //showContractForm <- from unit-details component
   actions: {
 
     load: function(){
@@ -13,6 +14,7 @@ export default Ember.Component.extend({
     },
     closeModal: function(){
       this.set('showContract', false);
+      this.set('showContractForm', false);
     },
   },
 

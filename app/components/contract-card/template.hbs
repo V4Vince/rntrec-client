@@ -3,10 +3,9 @@
   {{#md-modal close='closeModal'}}
     <div class="modal-fixed-footer">
       <div class="modal-content">
-        {{#if unitData.contract}}
         <div class="hasContract">
           <!-- Placeholder for title of modal-->
-          <h5 class="flow-text">Lease Contract</h5>
+          <h5 class="flow-text">Create contract</h5>
           <h5>{{unitData.house.street_name}}</h5>
           <h4>Unit: {{unitData.unit_num}}</h4>
           <!-- Placeholder for body of modal-->
@@ -21,17 +20,32 @@
             Security: {{unitData.contract.security}}
           </p>
         </div>
-        {{else}}
-        <div class="noContract">
+      </div>
+      <div class="modal-footer">
+      {{!-- {{#link-to 'new-property'}}
+      {{md-btn text='Create New Property'
+        class='blue white-text text-darken-3'}}
+      {{/link-to}} --}}
+      {{md-btn action="load"}}
+      </div>
+  </div>
+  {{/md-modal}}
+{{/if}}
+
+
+<!--Show if modalIsOpen is true-->
+{{#if showContractForm}}
+  {{#md-modal close='closeModal'}}
+    <div class="modal-fixed-footer">
+      <div class="modal-content">
+        <div class="hasContract">
           <!-- Placeholder for title of modal-->
           <h5 class="flow-text">Lease Contract</h5>
           <h5>{{unitData.house.street_name}}</h5>
           <h4>Unit: {{unitData.unit_num}}</h4>
-          <!-- Placeholder for body of modal-->
-          <p>There's currently no lease contract for this unit.
-          </p>
+          {{all-forms/new-contract
+           unitData=unitData }}
         </div>
-        {{/if}}
       </div>
       <div class="modal-footer">
       {{!-- {{#link-to 'new-property'}}

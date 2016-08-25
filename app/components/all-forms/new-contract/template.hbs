@@ -1,0 +1,41 @@
+{{md-input value=contractParams.start
+    label="Lease Start"
+    type='date'
+    class="col s12"
+    validate=true }}
+
+{{md-input value=contractParams.end
+    label="Lease End"
+    type='date'
+    class="col s6"
+    validate=true}}
+
+{{md-input value=contractParams.num_tenants
+    label="Number of tenants"
+    type='number'
+    class="col s6"
+    validate=true}}
+
+{{md-input value=contractParams.rent
+    label="Rent Amount"
+    type='number'
+    class="col s6"
+    validate=true}}
+
+{{md-input value=contractParams.security
+    label="Security Deposit"
+    type='number'
+    class="col s6"
+    validate=true}}
+
+<!-- Need to add expenses for unit -->
+
+<!--Add unit submit button-->
+{{md-btn text='Submit'
+  action='submit'
+  class='blue white-text text-darken-3'}}
+
+<!--Add unit cancel button-->
+{{md-btn text='Cancel'
+  action='reset'
+  class='red white-text text-darken-3'}}

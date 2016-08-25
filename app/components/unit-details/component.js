@@ -7,6 +7,7 @@ export default Ember.Component.extend({
   //unitData <- from unit route
   //delete <- from unit route
   showContract: false,
+  showContractForm: false,
   showOptions: false,
 
 
@@ -16,7 +17,15 @@ export default Ember.Component.extend({
         this.set('showOptions', true);
         console.log(this.get('showOptions'));
       },
-
+      newContract (){
+        let showContractForm = this.get('showContractForm');
+        if (showContractForm) {
+          this.set('showContractForm', false);
+        } else {
+          this.set('showContractForm', true);
+        }
+        console.log(this.get('showContractForm'));
+      },
       openContract (){
         let showContract = this.get('showContract');
         if (showContract) {

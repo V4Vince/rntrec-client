@@ -1,0 +1,43 @@
+<!--
+    TO DO:
+    1.Import from newproperty/building instead of add-property-form (DONE)
+    2.Must revise new-property/building to be like add-property-form -->
+
+{{md-input value=houseParams.street_name
+    label="Street Name"
+    type='text'
+    class="col s12"
+    validate=true}}
+
+{{md-input value=houseParams.mortgage
+    label="Monthly Mortgage"
+    type='number'
+    class="col s6"
+    validate=true}}
+
+{{md-input value=houseParams.taxes
+    label="Monthly Taxes"
+    type='number'
+    class="col s6"
+    validate=true}}
+
+{{md-input value=houseParams.insurance
+    label="Monthly Insurance"
+    type='number'
+    class="col s6"
+    validate=true}}
+
+{{md-input value=houseParams.num_units
+    label="Number of units"
+    type='number'
+    class="col s6"
+    validate=true}}
+
+
+{{md-btn text='Submit'
+  action='submit'
+  class='blue white-text text-darken-3'}}
+
+{{md-btn text='Cancel'
+  action='reset'
+  class='red white-text text-darken-3'}}
