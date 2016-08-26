@@ -1,7 +1,7 @@
 <!--To Do:
-    1. Need to add delete functionality for units.
+
     2. Need to add patch to unit
-    3. Need to add contracts
+
     4. Need to create Observers to keep track of rent
     5. Need to create adds money function
     6. Need to add D3.js-->
@@ -97,12 +97,15 @@
       </div><!--card-content current-lease-->
       <!--View contract button under the active lease-->
       <div class="details card-action">
+        <!-- If contract exists, show the contract details-->
         {{#if unitData.contract}}
         <button class="waves-effect waves-teal btn-flat btn-large details-button" {{action "openContract"}}>VIEW CONTRACT</button>
+        <!-- If contractDOES NOT exists, show the contract form -->
         {{else}}
-        <button class="waves-effect waves-teal btn-flat btn-large details-button" {{action "newContract"}}>NEW  CONTRACT</button>
+        <button class="waves-effect waves-teal btn-flat btn-large details-button" {{action "newContract"}}>ADD  CONTRACT</button>
         {{/if}}
       </div>
+      <!--Contract Modal-->
       {{contract-card
         unitData=unitData
         showContract=showContract
