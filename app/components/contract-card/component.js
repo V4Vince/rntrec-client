@@ -11,6 +11,14 @@ export default Ember.Component.extend({
   //showContractForm <- from unit-details component
   contractParams: {},
 
+
+  resetForm: function(){
+    this.set('contractParams', {});
+    this.set('showContract', false);
+    this.set('showContractForm', false);
+  },
+
+
   actions: {
 
     createContract () {
@@ -19,7 +27,7 @@ export default Ember.Component.extend({
       contract.set('unit', this.get('unitData'));
       contract.save()
       .then(() => {
-        this.set('showContractForm', false);
+        this.resetForm();
       })
       .then(() => {
         this.get('flashMessages')
@@ -37,7 +45,7 @@ export default Ember.Component.extend({
       console.log(contract);
       contract.destroyRecord()
       .then(() => {
-        this.set('showContract', false);
+        this.resetForm();
       })
       .then(() => {
         this.get('flashMessages')
@@ -51,9 +59,7 @@ export default Ember.Component.extend({
     },
 
     closeModal: function(){
-      this.set('contractParams', {});
-      this.set('showContract', false);
-      this.set('showContractForm', false);
+      this.resetForm();
     },
   },
 

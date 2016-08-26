@@ -1,4 +1,4 @@
-{{md-input value=contractParams.start
+{{!-- {{md-input value=contractParams.start
     label="Lease Start"
     type='date'
     class="col s12"
@@ -8,22 +8,37 @@
     label="Lease End"
     type='date'
     class="col s6"
-    validate=true}}
+    validate=true}} --}}
+<div class="row">
+{{md-input-date label='Lease Start'
+    value=contractParams.start
+    class="col s12 m3"
+    numberOfYears=5 }}
 
+{{md-input-date label='Lease End'
+    value=contractParams.end
+    class="col s12 m3"
+    numberOfYears=5 }}
+</div>
+
+<div class="row">
 {{md-input value=contractParams.num_tenants
     label="Number of tenants"
     type='number'
     class="col s6"
     validate=true}}
-
+</div>
+<div class="row">
 {{md-input value=contractParams.rent
     label="Rent Amount"
     type='number'
     class="col s6"
     validate=true}}
-
+</div>
+<div class="row">
 {{md-input value=contractParams.security
     label="Security Deposit"
     type='number'
     class="col s6"
     validate=true}}
+</div>
