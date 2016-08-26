@@ -1,5 +1,6 @@
 //TO DO:
 // -Use a date helper so that choosing a date in the form will be in the correct format to post to backend
+// -Materialize date picker causes weird shadow. Must remove shadow.
 
 import Ember from 'ember';
 
