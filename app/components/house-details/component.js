@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  tagName: 'form',
   //house <- from house route
   //unitParams
   //delete <- from house route

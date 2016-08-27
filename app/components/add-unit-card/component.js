@@ -7,17 +7,24 @@ export default Ember.Component.extend({
   //addUnit
   unitParams: {},
 
+  resetForm: function(){
+    this.set('unitParams', {});
+    this.set('addUnit', false);
+  },
+
   actions: {
-    createContract () {
-      // let id = this.get('house.id');
+    //creates a new unit for current house
+    createUnit () {
       let unitParams = this.get('unitParams');
       let house = this.get('house');
-      // let house = this.get('store').peekRecord('house', id);
       let unit = this.get('store').createRecord('unit', unitParams);
       let newHouse = house.get('units').pushObject(unit);
-      this.set('addUnit', false);
+      console.log(newHouse);
       newHouse.save()
-      // .then(() => this.set('addUnit', false))
+      .then(() => {
+        this.resetForm();
+        console.log(this.get('addUnit'));
+      })
       .then(() => {
         this.get('flashMessages')
         .success('Successfully added a unit');
@@ -27,6 +34,29 @@ export default Ember.Component.extend({
         this.get('flashMessages')
         .danger('There was a problem. Please try again.');
       });
+    },
+    //Add delete functionality here. Allows user to delete unit directly on house detail view
+
+    // deleteUnit() function(){
+    //   let contract = this.get('unitData.contract');
+    //   console.log(contract);
+    //   contract.destroyRecord()
+    //   .then(() => {
+    //     this.resetForm();
+    //   })
+    //   .then(() => {
+    //     this.get('flashMessages')
+    //     .success('Successfully terminated the current contract for this unit');
+    //   })
+    //   .catch((data) => {
+    //     console.log(data);
+    //     this.get('flashMessages')
+    //     .danger('There was a problem. Please try again.');
+    //   });
+    // },
+
+    closeModal: function(){
+      this.resetForm();
     },
   },
 });

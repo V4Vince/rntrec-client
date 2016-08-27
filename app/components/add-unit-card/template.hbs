@@ -1,24 +1,21 @@
-<!--Show if modalIsOpen is true-->
+
 {{#if addUnit}}
   {{#md-modal close='closeModal' isFooterFixed=true}}
       <div class="modal-content">
-        <div class="hasContract">
           <!-- Placeholder for title of modal-->
-          <h5 class="flow-text">Add Contract</h5>
-          <h5>{{unitData.house.street_name}}</h5>
-          <h4>Unit: {{unitData.unit_num}}</h4>
-          <!--Injects new-contract component-->
+          <h5 class="flow-text">New Unit</h5>
+          <h5>{{house.street_name}}</h5>
+
           {{all-forms/new-unit
-            house=house
             unitParams=unitParams }}
-        </div>
+
       </div>
       <div class="modal-footer">
         {{md-btn text='Cancel'
           action='closeModal'
           class='red white-text text-darken-3'}}
         {{md-btn text='Create Lease'
-          action='createContract'
+          action='createUnit'
           class='teal white-text text-darken-3'}}
       </div>
   {{/md-modal}}
