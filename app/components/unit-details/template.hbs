@@ -5,171 +5,174 @@
     4. Need to create Observers to keep track of rent
     5. Need to create adds money function
     6. Need to add D3.js-->
+<div class="row universal-padding">
 
-<div class="row">
-  <!--Property Name and Unit Number-->
-  <div class="col s10">
-    <h5 style="display: inline-block">{{unitData.house.street_name}}</h5>
-    <h4><span class="unit-num-heading">unit</span> {{unitData.unit_num}}</h4>
-  </div>
-  <!--Clickable options button near the property name-->
-  <div class="col s2 ">
-    <a class="options-button btn-flat right" {{action "open"}}>
-      <img class="options-icon" src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_mode_edit_48px-128.png" alt="" />
-    </a>
-  </div>
-  <!--Where the options Modal component will appear-->
-  {{options-button
-    delete="delete"
-    showOptions=showOptions
-    title="Unit Options" }}
-</div><!--row-->
+    <div class="row">
+      <!--Property Name and Unit Number-->
+      <div class="col s10">
+        <h5 style="display: inline-block">{{unitData.house.street_name}}</h5>
+        <h4><span class="unit-num-heading">unit</span> {{unitData.unit_num}}</h4>
+      </div>
+      <!--Clickable options button near the property name-->
+      <div class="col s2 ">
+        <a class="options-button btn-flat right" {{action "open"}}>
+          <img class="options-icon" src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_mode_edit_48px-128.png" alt="" />
+        </a>
+      </div>
+      <!--Where the options Modal component will appear-->
+      {{options-button
+        delete="delete"
+        showOptions=showOptions
+        title="Unit Options" }}
+    </div><!--row-->
 
-<!--First row of cards-->
-<div class="row">
-  <!--Defined how many columns the Earned card will take-->
-  <div class="col s12 l5">
-    <div class="card xsmall">
-      <!--Earned Card showing the amount earned-->
-      <div class="card-content activator">
-        <span class="card-title grey-text text-darken-4">Earned<i class="material-icons right">more_vert</i></span>
-        <h4 class="center-align activator">$1,230</h4>
-      </div>
-      <!--Details button under the earned card-->
-      <div class="details card-action">
-        <button class="waves-effect waves-teal btn-flat btn-large details-button">Details</button>
-      </div>
-      <!--More info about the earned amount upon clicking the earned card-->
-      <div class="card-reveal activator">
-        <span class="card-title grey-text text-darken-4">Earned since<i class="material-icons right">close</i></span>
-        <p>Break down how the number is calculated</p>
-      </div>
-    </div><!--card xsmall-->
-  </div><!--col s12 l5-->
+    <!--First row of cards-->
+    <div class="row">
+      <!--Defined how many columns the Earned card will take-->
+      <div class="col s12 l5">
+        <div class="card xsmall">
+          <!--Earned Card showing the amount earned-->
+          <div class="card-content activator">
+            <span class="card-title grey-text text-darken-4">Earned<i class="material-icons right">more_vert</i></span>
+            <h4 class="center-align activator">$1,230</h4>
+          </div>
+          <!--Details button under the earned card-->
+          <div class="details card-action">
+            <button class="waves-effect waves-teal btn-flat btn-large details-button">Details</button>
+          </div>
+          <!--More info about the earned amount upon clicking the earned card-->
+          <div class="card-reveal activator">
+            <span class="card-title grey-text text-darken-4">Earned since<i class="material-icons right">close</i></span>
+            <p>Break down how the number is calculated</p>
+          </div>
+        </div><!--card xsmall-->
+      </div><!--col s12 l5-->
 
-  <!--Defined how many columns the Spent card will take-->
-  <div class="col s12 l5">
-    <div class="card xsmall">
-      <!--Spent Card showing the amount spent-->
-      <div class="card-content activator">
-        <span class="card-title grey-text text-darken-4">Spent<i class="material-icons right">more_vert</i></span>
-        <h4 class="center-align activator">$930</h4>
-      </div>
-      <!--Details button under the spent card-->
-      <div class="details card-action">
-        <button class="waves-effect waves-teal btn-flat btn-large details-button">Details</button>
-      </div>
-      <!--More info about the spent amount upon clicking the spent card-->
-      <div class="card-reveal activator">
-        <span class="card-title grey-text text-darken-4">Spent since<i class="material-icons right">close</i></span>
-        <p>Break down how the number is calculated</p>
-      </div>
-    </div><!--card xsmall-->
-  </div><!--col s12 l5-->
+      <!--Defined how many columns the Spent card will take-->
+      <div class="col s12 l5">
+        <div class="card xsmall">
+          <!--Spent Card showing the amount spent-->
+          <div class="card-content activator">
+            <span class="card-title grey-text text-darken-4">Spent<i class="material-icons right">more_vert</i></span>
+            <h4 class="center-align activator">$930</h4>
+          </div>
+          <!--Details button under the spent card-->
+          <div class="details card-action">
+            <button class="waves-effect waves-teal btn-flat btn-large details-button">Details</button>
+          </div>
+          <!--More info about the spent amount upon clicking the spent card-->
+          <div class="card-reveal activator">
+            <span class="card-title grey-text text-darken-4">Spent since<i class="material-icons right">close</i></span>
+            <p>Break down how the number is calculated</p>
+          </div>
+        </div><!--card xsmall-->
+      </div><!--col s12 l5-->
 
-  <!--Column defines how larg the property quick-info card will be-->
-  <div class="col s12 l2">
-    <div class="card white darken-1">
-        <ul class="collection">
-          <li class="collection-item">Beds:</li>
-          <li class="collection-item">Baths:</li>
-          <li class="collection-item">Active: $2,000/month</li>
-          <li class="collection-item">Months Left: 4</li>
-        </ul>
+      <!--Column defines how larg the property quick-info card will be-->
+      <div class="col s12 l2">
+        <div class="card white darken-1">
+            <ul class="collection">
+              <li class="collection-item">Beds:</li>
+              <li class="collection-item">Baths:</li>
+              <li class="collection-item">Active: $2,000/month</li>
+              <li class="collection-item">Months Left: 4</li>
+            </ul>
+        </div>
+      </div><!--col s12 l5-->
+
+    </div><!-- end of First row of cards-->
+
+    <!--Current lease card row-->
+    <div class="row">
+      <div class="col s12">
+        <div class="card white darken-1">
+          <!--current lease card contents-->
+          <div class="card-content house-card">
+            <div class="card-title">Active Lease</div>
+            <!--current lease info row-->
+            <div class="row">
+              <div class="container flow-text center-align">
+                Shows the info of this this unit's current lease. When each rent was collected, how much, from whom  etc. Also shows how many months are left. Lease start date etc. View contract link will also go here.
+              </div>
+            </div><!--End of current-lease info row-->
+          </div><!--card-content current-lease-->
+          <!--View contract button under the active lease-->
+          <div class="details card-action">
+            <!-- If contract exists, show the contract details-->
+            {{#if unitData.contract}}
+            <button class="waves-effect waves-teal btn-flat btn-large details-button" {{action "openContract"}}>VIEW CONTRACT</button>
+            <!-- If contractDOES NOT exists, show the contract form -->
+            {{else}}
+            <button class="waves-effect waves-teal btn-flat btn-large details-button" {{action "newContract"}}>+ ADD  CONTRACT</button>
+            {{/if}}
+          </div>
+          <!--Contract Modal-->
+          {{contract-card
+            unitData=unitData
+            showContract=showContract
+            showContractForm=showContractForm
+             }}
+        </div><!--card-->
+      </div>
     </div>
-  </div><!--col s12 l5-->
 
-</div><!-- end of First row of cards-->
-
-<!--Current lease card row-->
-<div class="row">
-  <div class="col s12">
-    <div class="card white darken-1">
-      <!--current lease card contents-->
-      <div class="card-content house-card">
-        <div class="card-title">Active Lease</div>
-        <!--current lease info row-->
-        <div class="row">
-          <div class="container flow-text center-align">
-            Shows the info of this this unit's current lease. When each rent was collected, how much, from whom  etc. Also shows how many months are left. Lease start date etc. View contract link will also go here.
-          </div>
-        </div><!--End of current-lease info row-->
-      </div><!--card-content current-lease-->
-      <!--View contract button under the active lease-->
-      <div class="details card-action">
-        <!-- If contract exists, show the contract details-->
-        {{#if unitData.contract}}
-        <button class="waves-effect waves-teal btn-flat btn-large details-button" {{action "openContract"}}>VIEW CONTRACT</button>
-        <!-- If contractDOES NOT exists, show the contract form -->
-        {{else}}
-        <button class="waves-effect waves-teal btn-flat btn-large details-button" {{action "newContract"}}>+ ADD  CONTRACT</button>
-        {{/if}}
+    <!--Tenant info row-->
+    <div class="row">
+      <div class="col s12">
+        <div class="card white darken-1">
+          <!--tenant info card contents-->
+          <div class="card-content house-card">
+            <div class="card-title">Tenant</div>
+            <!--tenant info row-->
+            <div class="row">
+              <div class="container flow-text center-align">
+                All tenant info goes here. Names, contact info, personal info such as employment etc.
+                Messaging link will also go here.
+              </div>
+            </div><!--End of tenant info row-->
+          </div><!--card-content tenant-->
+        </div><!--card-->
       </div>
-      <!--Contract Modal-->
-      {{contract-card
-        unitData=unitData
-        showContract=showContract
-        showContractForm=showContractForm
-         }}
-    </div><!--card-->
-  </div>
-</div>
-
-<!--Tenant info row-->
-<div class="row">
-  <div class="col s12">
-    <div class="card white darken-1">
-      <!--tenant info card contents-->
-      <div class="card-content house-card">
-        <div class="card-title">Tenant</div>
-        <!--tenant info row-->
-        <div class="row">
-          <div class="container flow-text center-align">
-            All tenant info goes here. Names, contact info, personal info such as employment etc.
-            Messaging link will also go here.
-          </div>
-        </div><!--End of tenant info row-->
-      </div><!--card-content tenant-->
-    </div><!--card-->
-  </div>
-</div>
-
-<!--Second row of cards-->
-<div class="row">
-  <!--Column defines how large the Money Detail card will be-->
-  <div class="col s12">
-    <div class="card white darken-1">
-      <!--Money card contents-->
-      <div class="card-content house-card">
-        <span class="card-title">Money Details</span>
-        <!--Divider
-            Note: not showing up in the UI-->
-        <div class="divider"></div>
-        <!--Earnings row-->
-        <div class="earnings row">
-          <div id="earnings" class="col s12">
-            <h6>EARNINGS</h6>
-            <p class="flow-text center-align">
-              Details earning information here. Might include graphs, charts, grapgics etc. This section might be extensive.
-            </p>
-          </div>
-        </div><!--end of Earnings row-->
-        <!--Divider-->
-        <div class="expense-earnings divider"></div>
-        <!--Earnings row-->
-        <div class="expenses row">
-          <div class="col s12">
-            <h6>EXPENSES</h6>
-            <p class="flow-text center-align">
-              {{#each unitData.expenses as |expense|}}
-              <li>expense: {{expense.expense_for}}</li>
-              <li>expense amount: {{expense.expense_amount}}</li>
-              {{/each}}
-            </p>
-          </div>
-        </div><!--end expenses row-->
-
-      </div><!--end of money card contents-->
     </div>
-  </div><!--End of column defines how large the Money Detail card will be-->
-</div><!--End of second row of cards-->
+
+    <!--Second row of cards-->
+    <div class="row">
+      <!--Column defines how large the Money Detail card will be-->
+      <div class="col s12">
+        <div class="card white darken-1">
+          <!--Money card contents-->
+          <div class="card-content house-card">
+            <span class="card-title">Money Details</span>
+            <!--Divider
+                Note: not showing up in the UI-->
+            <div class="divider"></div>
+            <!--Earnings row-->
+            <div class="earnings row">
+              <div id="earnings" class="col s12">
+                <h6>EARNINGS</h6>
+                <p class="flow-text center-align">
+                  Details earning information here. Might include graphs, charts, grapgics etc. This section might be extensive.
+                </p>
+              </div>
+            </div><!--end of Earnings row-->
+            <!--Divider-->
+            <div class="expense-earnings divider"></div>
+            <!--Earnings row-->
+            <div class="expenses row">
+              <div class="col s12">
+                <h6>EXPENSES</h6>
+                <p class="flow-text center-align">
+                  {{#each unitData.expenses as |expense|}}
+                  <li>expense: {{expense.expense_for}}</li>
+                  <li>expense amount: {{expense.expense_amount}}</li>
+                  {{/each}}
+                </p>
+              </div>
+            </div><!--end expenses row-->
+
+          </div><!--end of money card contents-->
+        </div>
+      </div><!--End of column defines how large the Money Detail card will be-->
+    </div><!--End of second row of cards-->
+
+</div>

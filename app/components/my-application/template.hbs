@@ -1,8 +1,9 @@
+{{#if isAuthenticated}}
 <nav id="navigation-bar" class="container-fluid">
   {{#md-navbar name="RntRec" class='teal darken-1' homeRoute='index'}}
     <!-- A workaround to get the "active" class
       to apply to the active <li> automatically -->
-    {{#if isAuthenticated}}
+
     <!--Link to all-houses-->
     {{#link-to 'houses' tagName='li'}}
       {{link-to 'Houses' 'houses'}}
@@ -14,6 +15,10 @@
     <!--Link to change password-->
     {{#link-to 'change-password' tagName='li'}}
       {{link-to 'ChangePW' 'change-password'}}
+    {{/link-to}}
+
+    {{#link-to 'profile' tagName='li'}}
+      {{link-to 'Profile' 'profile'}}
     {{/link-to}}
     <!-- Log out button-->
     {{md-btn text='Log Out'
@@ -29,9 +34,10 @@
     {{#link-to 'sign-in' tagName='li'}}
       {{link-to 'Login' 'sign-in'}}
     {{/link-to}}
-    {{/if}}
+
   {{/md-navbar}}
 </nav>
+{{/if}}
 
 <!--Container where all other templates are injected-->
 <main id="main-content" class="container">
@@ -41,10 +47,14 @@
   <!---Injected here-->
   {{outlet}}
   <!--FAB injected here-->
+  {{#if isAuthenticated}}
   {{floating-action}}
+  {{/if}}
 </main>
 
+{{#if isAuthenticated}}
 <!--Container where footer is injected-->
 <div id="footer">
   {{application-footer}}
 </div>
+{{/if}}
