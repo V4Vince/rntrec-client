@@ -1,4 +1,4 @@
-{{email-input email=credentials.email}}
+{{!-- {{email-input email=credentials.email}}
 {{password-input password=credentials.password}}
 {{password-confirmation-input password=credentials.passwordConfirmation}}
 
@@ -8,4 +8,22 @@
 
 {{md-btn text='Cancel'
   action='reset'
-  class='red white-text text-darken-3'}}
+  class='red white-text text-darken-3'}} --}}
+
+
+  <div class="row">
+    <div class="col s12">
+      {{email-input email=credentials.email}}
+      {{password-input password=credentials.password}}
+      {{password-confirmation-input password=credentials.passwordConfirmation}}
+
+      {{md-btn text='Sign Up'
+        action='submit'
+        class='teal-darken-3
+          white-text
+          text-darken-3
+          col s12
+          sign-in-up-button'}}
+
+    </div>
+  </div>

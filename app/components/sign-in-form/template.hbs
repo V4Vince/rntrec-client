@@ -1,14 +1,14 @@
-{{email-input email=credentials.email}}
-{{password-input password=credentials.password}}
 
-{{md-check name="Remember me"
-  checked=checkboxIsSelected
-  for="remember"}}
-
-{{md-btn text='Sign In'
-  action='submit'
-  class='blue white-text text-darken-3'}}
-
-{{md-btn text='Cancel'
-  action='reset'
-  class='red white-text text-darken-3'}}
+<div class="row">
+  <div class="col s12">
+    {{email-input email=credentials.email}}
+    {{password-input password=credentials.password}}
+    {{md-btn text='Sign In'
+      action='submit'
+      class='teal-darken-3
+        white-text
+        text-darken-3
+        col s12
+        sign-in-up-button'}}
+  </div>
+</div>

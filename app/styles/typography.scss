@@ -1,3 +1,7 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 li {
   list-style: none;
 }
@@ -9,6 +13,7 @@ p {
 .card-panel {
   text-align: center;
 }
+
 
 #house-name-card-title {
   font-size: 2em;
@@ -28,7 +33,8 @@ p {
 }
 
 .divider {
-  margin-top: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .house-quick-info {
   font-size: 1.7em;

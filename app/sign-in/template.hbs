@@ -1,3 +1,46 @@
-<h2>Sign In</h2>
 
-{{sign-in-form submit="signIn" reset="reset"}}
+{{!--
+{{email-input email=credentials.email}}
+{{password-input password=credentials.password}} --}}
+
+
+{{!-- {{md-check name="Remember me"
+  checked=checkboxIsSelected
+  for="remember"}} --}}
+
+{{!-- {{md-btn text='Sign In'
+  action='submit'
+  class='blue white-text text-darken-3'}}
+
+{{md-btn text='Cancel'
+  action='reset'
+  class='red white-text text-darken-3'}} --}}
+
+<div class="row valign-wrapper">
+  <div class="container">
+    <div class="col s10 m6 offset-s1 offset-m3">
+
+    {{#md-card-panel class="white z-depth-3"
+        bodyClass="black-text"
+        id="sign-in-card"}}
+          <div class="row">
+            <div class="col s12">
+              <h3>RntRec</h3>
+              <p>
+                Sign-in to track your properties!
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+            {{sign-in-form submit="signIn"}}
+            </div>
+          </div>
+          <p class="right-align">
+            {{#link-to 'sign-up'}}Register!{{/link-to}}
+          </p>
+      {{/md-card-panel}}
+
+    </div>
+  </div>
+</div>
