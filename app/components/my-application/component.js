@@ -8,8 +8,8 @@ export default Ember.Component.extend({
 
   actions: {
     //Sends the signout action to Application route
-    signOut () {
-      this.sendAction('signOut');
-    },
+    // signOut () {
+    //   this.sendAction('signOut');
+    // },
   },
 });
