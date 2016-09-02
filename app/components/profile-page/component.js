@@ -3,8 +3,14 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   auth: Ember.inject.service(),
   flashMessages: Ember.inject.service(),
+  newPassword: false,
 
   actions: {
+    newPassword() {
+      this.set('newPassword', true);
+    },
+
+
     signOut () {
       this.sendAction('signOut');
     },
