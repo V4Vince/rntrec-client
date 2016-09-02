@@ -12,28 +12,34 @@
     {{#link-to 'units' tagName='li'}}
       {{link-to 'Units' 'units'}}
     {{/link-to}}
+
+    <!-- Dont need change password link in nav bar b/c user can change pw in profile -->
     <!--Link to change password-->
-    {{#link-to 'change-password' tagName='li'}}
+    {{!-- {{#link-to 'change-password' tagName='li'}}
       {{link-to 'ChangePW' 'change-password'}}
-    {{/link-to}}
+    {{/link-to}} --}}
 
     {{#link-to 'profile' tagName='li'}}
       {{link-to 'Profile' 'profile'}}
     {{/link-to}}
+
+    <!-- Dont need log out link in nav bar b/c user can log out in profile -->
     <!-- Log out button-->
     {{!-- {{md-btn text='Log Out'
     	action='signOut'
     	class='btn-large red white-text text-darken-3'}} --}}
     <!-- Show sign-in/sign-up if not authenticated-->
     {{else}}
+
+    <!-- Dont need sign-in/sign-up link in nav bar -->
     <!--Link to Sign-up-->
-    {{#link-to 'sign-up' tagName='li'}}
+    {{!-- {{#link-to 'sign-up' tagName='li'}}
       {{link-to 'Sign Up' 'sign-up'}}
     {{/link-to}}
     <!--Link to sign-in-->
     {{#link-to 'sign-in' tagName='li'}}
       {{link-to 'Login' 'sign-in'}}
-    {{/link-to}}
+    {{/link-to}} --}}
 
   {{/md-navbar}}
 </nav>
