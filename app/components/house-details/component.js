@@ -7,6 +7,7 @@ export default Ember.Component.extend({
   //delete <- from house route
   addUnit: false,
   showOptions: false,
+  showExpenseForm: false,
 
   actions: {
     //add unit button
@@ -24,5 +25,9 @@ export default Ember.Component.extend({
       let thisProperty = this.get('house');
       this.sendAction('delete', thisProperty);
       },
+
+    addExpense: function(){
+      this.set('showExpenseForm', true);
+    },
   },
 });

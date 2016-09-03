@@ -1,0 +1,54 @@
+<!--Show if modalIsOpen is true-->
+{{#if showContract}}
+  {{#md-modal close='closeModal' isFooterFixed=true}}
+      <div class="modal-content">
+          <!-- Placeholder for title of modal-->
+          <h5 class="flow-text">Current Contract</h5>
+          <h5>{{unitData.house.street_name}}</h5>
+          <h4>Unit: {{unitData.unit_num}}</h4>
+          <p>Term:
+            <br>
+            Start: {{unitData.contract.start}}
+            <br>
+            End: {{unitData.contract.end}}
+            <br>
+            Rent: {{unitData.contract.rent}}
+            <br>
+            Security: {{unitData.contract.security}}
+          </p>
+      </div>
+      <div class="modal-footer">
+        {{md-btn text='Terminate Lease'
+          action='deleteContract'
+          class='red white-text text-darken-3'}}
+      </div>
+  {{/md-modal}}
+{{/if}}
+
+
+{{#if showExpenseForm}}
+  {{#md-modal close='closeModal' isFooterFixed=true}}
+      <div class="modal-content">
+        <div class="hasContract">
+          <!-- Placeholder for title of modal-->
+          <h5 class="flow-text">Add Expense</h5>
+          {{#if house}}
+          <h5>{{house.street_name}}</h5>
+          {{else}}
+          <h4>Unit: {{unit.unit_num}}</h4>
+          {{/if}}
+          <!--Injects new-contract component-->
+          {{all-forms/new-expense
+           expenseParams=expenseParams }}
+        </div>
+      </div>
+      <div class="modal-footer">
+        {{md-btn text='Cancel'
+          action='closeModal'
+          class='red white-text text-darken-3'}}
+        {{md-btn text='Add Expense'
+          action='createExpense'
+          class='teal white-text text-darken-3'}}
+      </div>
+  {{/md-modal}}
+{{/if}}

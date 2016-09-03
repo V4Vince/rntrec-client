@@ -1,0 +1,34 @@
+{{!-- {{md-input value=expenseParams.start
+    label="Lease Start"
+    type='date'
+    class="col s12"
+    validate=true }}
+
+{{md-input value=expenseParams.end
+    label="Lease End"
+    type='date'
+    class="col s6"
+    validate=true}} --}}
+<div class="row">
+{{md-input label='Expense For'
+    value=expenseParams.expense_for
+    class="col s12 m6" }}
+</div>
+<div class="row">
+{{md-input label='Amount'
+    value=expenseParams.expense_amount
+    class="col s12 m6" }}
+</div>
+<div class="row">
+  {{md-input-date label='Date'
+      value=expenseParams.expense_date
+      class="col s12 m6"
+      numberOfYears=5 }}
+</div>
+<div class="row">
+{{md-textarea value=expenseParams.expense_description
+    label="Details"
+    maxlength=100
+    class="col s12 m6"
+    validate=true}}
+</div>
