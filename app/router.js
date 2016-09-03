@@ -15,8 +15,6 @@ Router.map(function () {
   this.route('units');
   this.route('unit', { path: '/units/:unit_id' });
   this.route('new-property');
-  this.route('contracts');
-  this.route('contract', { path: '/contracts/:contract_id'});
   this.route('expenses');
   this.route('profile');
 });
