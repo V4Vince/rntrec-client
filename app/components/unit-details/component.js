@@ -9,7 +9,7 @@ export default Ember.Component.extend({
   showContract: false,
   showContractForm: false,
   showOptions: false,
-
+  showExpenseForm: false,
 
   actions: {
       //opens the option modal
@@ -41,6 +41,9 @@ export default Ember.Component.extend({
         this.sendAction('delete', thisUnit);
         },
 
+      addExpense: function(){
+        this.set('showExpenseForm', true);
+      },
     }, //actions
 
 }); //Ember.Component

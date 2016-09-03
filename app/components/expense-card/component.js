@@ -4,6 +4,7 @@ export default Ember.Component.extend({
   flashMessages: Ember.inject.service(),
   store: Ember.inject.service(),
   ajax: Ember.inject.service(),
+  postExpense: Ember.inject.service(),
   //unitData <- from unit-details component
   //showContract <- from unit-details component
 
@@ -18,52 +19,38 @@ export default Ember.Component.extend({
     this.set('showExpenseForm', false);
   },
 
-  actions: {
+// determines if parent is house or unit that will be receiving the expense post and then calls the correct custom post function
+  determineParent: function(){
+    let params = this.get('expenseParams');
+    if (this.get('house')) {
+      let id = this.get('house.id');
+      return this.get('postExpense').postHouseExpense(params, id);
+    } else {
+      let id = this.get('unitData.id');
+      return this.get('postExpense').postUnitExpense(params, id);
+    }
+  },
 
+  actions: {
+//creates a new expense
     createExpense () {
-      if (this.get('house')) {
-        let params = this.get('expenseParams');
-        let url = `/houses/${this.get('house.id')}/expenses`;
-        console.log(params);
-        console.log(url);
-        return this.get('ajax').post(url, {
-          data: {
-            expense: {
-              expense_for: params.expense_for,
-              expense_description: params.expense_description,
-              expense_amount: params.expense_amount,
-              expense_date: params.expense_date
-            },
-          },
-        });
-      } else {
-        let params = this.get('expenseParams');
-        let url = `/units/${this.get('unit.id')}/expenses`;
-        console.log(params);
-        console.log(url);
-        return this.get('ajax').post(url, {
-          data: {
-            expense: {
-              expense_for: params.expense_for,
-              expense_description: params.expense_description,
-              expense_amount: params.expense_amount,
-              expense_date: params.expense_date
-            },
-          },
-        });
-      }
-      // .then(() => {
-      //   this.resetForm();
-      // })
-      // .then(() => {
-      //   this.get('flashMessages')
-      //   .success('Successfully added a new expense');
-      // })
-      // .catch((data) => {
+      this.determineParent()
+      // .then((data) => {
       //   console.log(data);
-      //   this.get('flashMessages')
-      //   .danger('There was a problem. Please try again.');
-      // });
+      //   this.get('store').push(this.get('store').normalize('expense', data));
+      // })
+      .then(() => {
+        this.resetForm();
+      })
+      .then(() => {
+        this.get('flashMessages')
+        .success('Successfully added a new expense');
+      })
+      .catch((data) => {
+        console.log(data);
+        this.get('flashMessages')
+        .danger('There was a problem. Please try again.');
+      });
     },
 
 

@@ -58,7 +58,7 @@
           </div>
           <!--Details button under the spent card-->
           <div class="details card-action">
-            <button class="waves-effect waves-teal btn-flat btn-large details-button">Details</button>
+            <button class="waves-effect waves-teal btn-flat btn-large details-button" {{action "addExpense"}}>Details</button>
           </div>
           <!--More info about the spent amount upon clicking the spent card-->
           <div class="card-reveal activator">
@@ -67,6 +67,8 @@
           </div>
         </div><!--card xsmall-->
       </div><!--col s12 l5-->
+
+      {{expense-card showExpenseForm=showExpenseForm unitData=unitData }}
 
       <!--Column defines how larg the property quick-info card will be-->
       <div class="col s12 l2">
