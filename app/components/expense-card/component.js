@@ -33,11 +33,17 @@ export default Ember.Component.extend({
 
   actions: {
 //creates a new expense
+
+//ISSUE: posting is successful, however after posting, the new expense wil not show unless page is refreshed
     createExpense () {
       this.determineParent()
       // .then((data) => {
       //   console.log(data);
       //   this.get('store').push(this.get('store').normalize('expense', data));
+      // })
+      // .then((expense) => {
+      //   console.log(expense);
+      //   this.get('store').push(this.get('store').normalize('house', {expense}));
       // })
       .then(() => {
         this.resetForm();

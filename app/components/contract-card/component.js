@@ -17,6 +17,10 @@ export default Ember.Component.extend({
     this.set('contractParams', {});
     this.set('showContract', false);
     this.set('showContractForm', false);
+    console.log("show contract");
+    console.log(this.get('showContract'));
+    console.log("show contract form");
+    console.log(this.get('showContractForm'));
   },
 
 
@@ -29,6 +33,7 @@ export default Ember.Component.extend({
       contract.save()
       .then(() => {
         this.resetForm();
+        console.log("the then");
       })
       .then(() => {
         this.get('flashMessages')

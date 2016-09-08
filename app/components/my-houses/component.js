@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   //housesData <- from houses route
 
-  sortPropertyBy: ['street_name'],
+  sortPropertyBy: ['streetName'],
   sortedProperty: Ember.computed.sort('housesData', 'sortPropertyBy'),
 
 });

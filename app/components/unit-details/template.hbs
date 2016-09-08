@@ -10,8 +10,8 @@
     <div class="row">
       <!--Property Name and Unit Number-->
       <div class="col s10">
-        <h5 style="display: inline-block">{{unitData.house.street_name}}</h5>
-        <h4><span class="unit-num-heading">unit</span> {{unitData.unit_num}}</h4>
+        <h5 style="display: inline-block">{{unitData.house.streetName}}</h5>
+        <h4><span class="unit-num-heading">unit</span> {{unitData.unitNum}}</h4>
       </div>
       <!--Clickable options button near the property name-->
       <div class="col s2 ">
@@ -165,8 +165,8 @@
                 <h6>EXPENSES</h6>
                 <p class="flow-text center-align">
                   {{#each unitData.expenses as |expense|}}
-                  <li>expense: {{expense.expense_for}}</li>
-                  <li>expense amount: {{expense.expense_amount}}</li>
+                  <li>expense: {{expense.expenseFor}}</li>
+                  <li>expense amount: {{expense.expenseAmount}}</li>
                   {{/each}}
                 </p>
               </div>

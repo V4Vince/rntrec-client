@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Service.extend({
   ajax: Ember.inject.service(),
+  store: Ember.inject.service(),
 
 //custom post function; allows for expense to be posted to shallow route
 //sends POST to: houses/$ID/expenses
@@ -10,10 +11,10 @@ export default Ember.Service.extend({
       return this.get('ajax').post(url, {
         data: {
           expense: {
-            expense_for: params.expense_for,
-            expense_description: params.expense_description,
-            expense_amount: params.expense_amount,
-            expense_date: params.expense_date
+            expense_for: params.expenseFor,
+            expense_description: params.expenseDescription,
+            expense_amount: params.expenseAmount,
+            expense_date: params.expenseDate,
           },
         },
       });
@@ -26,10 +27,10 @@ export default Ember.Service.extend({
         return this.get('ajax').post(url, {
           data: {
             expense: {
-              expense_for: params.expense_for,
-              expense_description: params.expense_description,
-              expense_amount: params.expense_amount,
-              expense_date: params.expense_date
+              expense_for: params.expenseFor,
+              expense_description: params.expenseDescription,
+              expense_amount: params.expenseAmount,
+              expense_date: params.expenseDate
             },
           },
         });

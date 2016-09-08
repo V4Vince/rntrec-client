@@ -1,11 +1,15 @@
+<button class="waves-effect waves-teal btn-flat btn-large details-button" {{action "addExpense"}}>Details</button>
+
+
+
 <!--Show if modalIsOpen is true-->
 {{#if showContract}}
   {{#md-modal close='closeModal' isFooterFixed=true}}
       <div class="modal-content">
           <!-- Placeholder for title of modal-->
           <h5 class="flow-text">Current Contract</h5>
-          <h5>{{unitData.house.street_name}}</h5>
-          <h4>Unit: {{unitData.unit_num}}</h4>
+          <h5>{{unitData.house.streetName}}</h5>
+          <h4>Unit: {{unitData.unitNum}}</h4>
           <p>Term:
             <br>
             Start: {{unitData.contract.start}}
@@ -33,9 +37,9 @@
           <!-- Placeholder for title of modal-->
           <h5 class="flow-text">Add Expense</h5>
           {{#if house}}
-          <h5>{{house.street_name}}</h5>
+          <h5>{{house.streetName}}</h5>
           {{else}}
-          <h4>Unit: {{unit.unit_num}}</h4>
+          <h4>Unit: {{unit.unitNum}}</h4>
           {{/if}}
           <!--Injects new-contract component-->
           {{all-forms/new-expense

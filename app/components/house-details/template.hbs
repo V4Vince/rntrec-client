@@ -3,7 +3,7 @@
     <div class="row">
       <!--Property Name-->
       <div class="col s10">
-        <h4 style="display: inline-block">{{house.street_name}}
+        <h4 style="display: inline-block">{{house.streetName}}
         </h4>
       </div>
       <!--Clickable options button near the property name-->
@@ -16,7 +16,7 @@
       {{options-button
         delete="delete"
         showOptions=showOptions
-        title=house.street_name
+        title=house.streetName
         action="open"}}
     </div><!--row-->
 
@@ -106,8 +106,8 @@
                 <h6>EXPENSES</h6>
                 <p class="flow-text center-align">
                   {{#each house.expenses as |expense|}}
-                  <li>expense: {{expense.expense_for}}</li>
-                  <li>expense amount: {{expense.expense_amount}}</li>
+                  <li>expense: {{expense.expenseFor}}</li>
+                  <li>expense amount: {{expense.expenseAmount}}</li>
                   {{/each}}
 
                 </p>
@@ -183,13 +183,13 @@
                 <div class="col s3 m2">
                   <div class="unit-number card-panel">
                     <span class="title">
-                      <h5 class="">{{unit.unit_num}}</h5>
+                      <h5 class="">{{unit.unitNum}}</h5>
                     </span>
                   </div>
                 </div>
                 <!--Contains unit information-->
                 <div class="col s8 valign">
-                  <h5>Unit# {{unit.unit_num}}</h5>
+                  <h5>Unit# {{unit.unitNum}}</h5>
                   <h6>August 1, 2016 - July 31, 2017</h6>
                 </div>
               </div><!--End of unit has a row with number and info-->

@@ -4,8 +4,8 @@
       <div class="modal-content">
           <!-- Placeholder for title of modal-->
           <h5 class="flow-text">Current Contract</h5>
-          <h5>{{unitData.house.street_name}}</h5>
-          <h4>Unit: {{unitData.unit_num}}</h4>
+          <h5>{{unitData.house.streetName}}</h5>
+          <h4>Unit: {{unitData.unitNum}}</h4>
           <p>Term:
             <br>
             Start: {{unitData.contract.start}}
@@ -33,8 +33,8 @@
         <div class="hasContract">
           <!-- Placeholder for title of modal-->
           <h5 class="flow-text">Add Contract</h5>
-          <h5>{{unitData.house.street_name}}</h5>
-          <h4>Unit: {{unitData.unit_num}}</h4>
+          <h5>{{unitData.house.streetName}}</h5>
+          <h4>Unit: {{unitData.unitNum}}</h4>
           <!--Injects new-contract component-->
           {{all-forms/new-contract
            contractParams=contractParams }}

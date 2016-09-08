@@ -1,10 +1,10 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  street_name: DS.attr('string'),
-  num_units: DS.attr('number'),
-  purchase_price: DS.attr('number'),
-  current_price: DS.attr('number'),
+  streetName: DS.attr('string'),
+  numUnits: DS.attr('number'),
+  purchasePrice: DS.attr('number'),
+  currentPrice: DS.attr('number'),
   mortgage: DS.attr('number'),
   taxes: DS.attr('number'),
   insurance: DS.attr('number'),

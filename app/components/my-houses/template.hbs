@@ -15,7 +15,7 @@
             <div class="card-content house-card">
               <!--Links to specific house-->
               {{#link-to 'house' house.id}}
-                <span id="house-name-card-title" class="card-title">{{house.street_name}}</span>
+                <span id="house-name-card-title" class="card-title">{{house.streetName}}</span>
               {{/link-to}}
               <!--Divider-->
               <div class="divider"></div>
@@ -79,7 +79,7 @@
             {{#link-to "unit" unit.id}}
               <div class="card z-depth-2">
                 <div class="unit-card-content center-align flow-text">
-                  <span class="unit-subscript">Unit</span> {{unit.unit_num}}
+                  <span class="unit-subscript">Unit</span> {{unit.unitNum}}
                 </div>
               </div>
             {{/link-to}}

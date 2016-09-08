@@ -5,6 +5,7 @@ export default Ember.Route.extend(ScrollPositionMixin, {
   auth: Ember.inject.service(),
   flashMessages: Ember.inject.service(),
 
+
   actions: {
     signOut () {
       this.get('auth').signOut()
