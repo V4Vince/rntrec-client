@@ -118,11 +118,11 @@
               <div class="col s12">
               {{#md-collection content=house.expenses as |expense|}}
                 <div class='collection-item valign-wrapper'>
-                  <div class="col s9 valign left-align">
+                  <div class="col s8 valign left-align">
                     <h5>{{expense.expenseFor}}</h5>
                     <h6>{{expense.expenseDescription}}</h6>
                   </div>
-                  <div class="col s3 valign">
+                  <div class="col s4 valign">
                     <h5>{{formatCurrency expense.expenseAmount}}</h5>
                     <h6>{{expense.expenseDate}}</h6>
                   </div>
