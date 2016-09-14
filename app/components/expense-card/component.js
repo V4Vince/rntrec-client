@@ -19,8 +19,14 @@ export default Ember.Component.extend({
     this.set('showExpenseForm', false);
   },
 
-// determines if parent is house or unit that will be receiving the expense post and then calls the correct custom post function
   determineParent: function(){
+    if (this.get('house')) {
+      return this.get('house');
+    } return this.get('unitData');
+  },
+
+// determines if parent is house or unit that will be receiving the expense post and then calls the correct custom post function
+  createExpensePost: function(){
     let params = this.get('expenseParams');
     if (this.get('house')) {
       let id = this.get('house.id');
@@ -34,21 +40,15 @@ export default Ember.Component.extend({
   actions: {
 //creates a new expense
 
-//ISSUE: posting is successful, however after posting, the new expense wil not show unless page is refreshed
+//ISSUE:
+//1. After creating the expense, the form data is not refreshed
     createExpense () {
-      this.determineParent()
-      // .then((data) => {
-      //   console.log(data);
-      //   this.get('store').push(this.get('store').normalize('expense', data));
-      // })
-      // .then((expense) => {
-      //   console.log(expense);
-      //   this.get('store').push(this.get('store').normalize('house', {expense}));
-      // })
+      this.createExpensePost()
       .then(() => {
-        this.resetForm();
+        this.determineParent().reload();
       })
       .then(() => {
+        this.resetForm();
         this.get('flashMessages')
         .success('Successfully added a new expense');
       })
