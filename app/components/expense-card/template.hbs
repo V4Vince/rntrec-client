@@ -1,35 +1,3 @@
-<button class="waves-effect waves-teal btn-flat btn-large details-button" {{action "addExpense"}}>Details</button>
-
-
-
-<!--Show if modalIsOpen is true-->
-{{#if showContract}}
-  {{#md-modal close='closeModal' isFooterFixed=true}}
-      <div class="modal-content">
-          <!-- Placeholder for title of modal-->
-          <h5 class="flow-text">Current Contract</h5>
-          <h5>{{unitData.house.streetName}}</h5>
-          <h4>Unit: {{unitData.unitNum}}</h4>
-          <p>Term:
-            <br>
-            Start: {{unitData.contract.start}}
-            <br>
-            End: {{unitData.contract.end}}
-            <br>
-            Rent: {{unitData.contract.rent}}
-            <br>
-            Security: {{unitData.contract.security}}
-          </p>
-      </div>
-      <div class="modal-footer">
-        {{md-btn text='Terminate Lease'
-          action='deleteContract'
-          class='red white-text text-darken-3'}}
-      </div>
-  {{/md-modal}}
-{{/if}}
-
-
 {{#if showExpenseForm}}
   {{#md-modal close='closeModal' isFooterFixed=true}}
       <div class="modal-content">
@@ -39,9 +7,10 @@
           {{#if house}}
           <h5>{{house.streetName}}</h5>
           {{else}}
-          <h4>Unit: {{unit.unitNum}}</h4>
+          <h3>{{unitData.house.streetName}}</h3>
+          <h4>Unit: {{unitData.unitNum}}</h4>
           {{/if}}
-          <!--Injects new-contract component-->
+          <!--Injects new-expense component-->
           {{all-forms/new-expense
            expenseParams=expenseParams }}
         </div>
@@ -56,3 +25,10 @@
       </div>
   {{/md-modal}}
 {{/if}}
+
+{{!--
+
+TO DO:
+1. Fix styles
+
+ --}}
