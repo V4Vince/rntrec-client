@@ -1,3 +1,14 @@
+<!-- Breadcrumb -->
+<div class="row">
+  <div class="col s12">
+    <!-- Link to all properties -->
+    {{#link-to 'houses' class="teal-text breadcrumb"}}Properties{{/link-to}}
+    <!-- Link to property -->
+    {{#link-to 'house' house.id class="teal-text breadcrumb"}}{{house.streetName}}{{/link-to}}
+  </div>
+</div>
+
+
 <div class="row universal-padding">
 
     <div class="row">

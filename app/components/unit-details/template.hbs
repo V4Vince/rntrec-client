@@ -5,6 +5,19 @@
     4. Need to create Observers to keep track of rent
     5. Need to create adds money function
     6. Need to add D3.js-->
+
+<!-- Breadcrumb -->
+<div class="row">
+  <div class="col s12">
+    <!-- Link to all properties -->
+    {{#link-to 'houses' class="teal-text breadcrumb"}}Properties{{/link-to}}
+    <!-- Link to property -->
+    {{#link-to 'house' unitData.house.id class="teal-text breadcrumb"}}{{unitData.house.streetName}}{{/link-to}}
+    <!-- Link to current unit -->
+    {{#link-to 'unit' unitData.id class="teal-text breadcrumb"}}Unit: {{unitData.unitNum}}{{/link-to}}
+  </div>
+</div>
+
 <div class="row universal-padding">
 
     <div class="row">
