@@ -174,18 +174,24 @@
             </div><!--end of Earnings row-->
             <!--Divider-->
             <div class="expense-earnings divider"></div>
-            <!--Earnings row-->
-            <div class="expenses row">
+
+            <div class="row expense">
+              <!-- Expense collection -->
               <div class="col s12">
-                <h6>EXPENSES</h6>
-                <p class="flow-text center-align">
-                  {{#each unitData.expenses as |expense|}}
-                  <li>expense: {{expense.expenseFor}}</li>
-                  <li>expense amount: {{expense.expenseAmount}}</li>
-                  {{/each}}
-                </p>
+              {{#md-collection content=unitData.expenses as |expense|}}
+                <div class='collection-item valign-wrapper'>
+                  <div class="col s9 valign left-align">
+                    <h5>{{expense.expenseFor}}</h5>
+                    <h6>{{expense.expenseDescription}}</h6>
+                  </div>
+                  <div class="col s3 valign">
+                    <h5>{{formatCurrency expense.expenseAmount}}</h5>
+                    <h6>{{expense.expenseDate}}</h6>
+                  </div>
+                </div>
+              {{/md-collection}}
               </div>
-            </div><!--end expenses row-->
+            </div>
 
           </div><!--end of money card contents-->
         </div>

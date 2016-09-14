@@ -113,50 +113,23 @@
             <div class="expense-earnings divider"></div>
             <!--Earnings row-->
 
-            <!-- Expense collection -->
-            <div class="col s12">
-            {{#md-collection content=house.expenses as |expense|}}
-              <div class='collection-item valign-wrapper'>
-
-                <div class="col s10 valign left-align">
-                  <h5>{{expense.expenseFor}}</h5>
-                  <h6>{{expense.expenseDescription}}</h6>
+            <div class="row expense">
+              <!-- Expense collection -->
+              <div class="col s12">
+              {{#md-collection content=house.expenses as |expense|}}
+                <div class='collection-item valign-wrapper'>
+                  <div class="col s9 valign left-align">
+                    <h5>{{expense.expenseFor}}</h5>
+                    <h6>{{expense.expenseDescription}}</h6>
+                  </div>
+                  <div class="col s3 valign">
+                    <h5>{{formatCurrency expense.expenseAmount}}</h5>
+                    <h6>{{expense.expenseDate}}</h6>
+                  </div>
                 </div>
-
-                <div class="col s2 valign">
-                  <h5>{{expense.expenseAmount}}</h5>
-                  <h6>{{expense.expenseDate}}</h6>
-                </div>
-
+              {{/md-collection}}
               </div>
-            {{/md-collection}}
             </div>
-
-            <div class="collection">
-              {{#each house.units as |unit|}}
-              <!--Links to the specific unit-->
-              {{#link-to 'unit' unit.id}}
-              <a href="#!" class="collection-item">
-                <!--Unit has a row with number and info-->
-                <div class="row">
-                  <!--Contains unit number-->
-                  <div class="col s3 m2">
-                    <div class="unit-number card-panel">
-                      <span class="title">
-                        <h5 class="">{{unit.unitNum}}</h5>
-                      </span>
-                    </div>
-                  </div>
-                  <!--Contains unit information-->
-                  <div class="col s8 valign">
-                    <h5>Unit# {{unit.unitNum}}</h5>
-                    <h6>August 1, 2016 - July 31, 2017</h6>
-                  </div>
-                </div><!--End of unit has a row with number and info-->
-              </a>
-              {{/link-to}}<!--End of links to the specific unit-->
-              {{/each}}
-            </div><!--End of collection of property units with clickable link-->
 
 
 
