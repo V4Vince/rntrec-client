@@ -186,7 +186,8 @@
                   </div>
                   <div class="col s4 valign">
                     <h6>{{formatCurrency expense.expenseAmount}}</h6>
-                    <p>{{expense.expenseDate}}</p>
+                    <p>{{moment-format expense.expenseDate 'LL'}}</p>
+                    {{!-- <p>{{expense.expenseDate}}</p> --}}
                   </div>
                 </div>
               {{/md-collection}}
