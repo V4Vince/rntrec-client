@@ -29,3 +29,10 @@ html {
 p.house-card-substript {
   color: red;
 }
+
+.bold {
+ @extend .black-text;
+}
+.light {
+  @extend .grey-text, .darken-4;
+}
