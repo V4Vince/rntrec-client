@@ -15,11 +15,20 @@
     value=expenseParams.expenseFor
     class="col s12 m6" }}
 </div>
+
 <div class="row">
 {{md-input label='Amount'
     value=expenseParams.expenseAmount
     class="col s12 m6" }}
 </div>
+<!--
+Currently input value is saved in the mask format. Need to unmask the input value before persisting to backend-->
+<div class="row">
+{{masked-input mask=createNumberMask
+    value=expenseParams.expenseAmount
+    class="col s12 m6"}}
+</div>
+
 <div class="row">
   {{md-input-date label='Date'
       value=expenseParams.expenseDate
