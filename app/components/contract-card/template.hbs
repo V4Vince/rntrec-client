@@ -14,7 +14,11 @@
             <br>
             Rent: {{formatCurrency unitData.contract.rent}}
             <br>
+            {{#if  unitData.contract.security}}
             Security: {{formatCurrency unitData.contract.security}}
+            {{else}}
+            Security: No security deposit for this unit
+            {{/if}}
           </p>
       </div>
       <div class="modal-footer">
