@@ -72,7 +72,7 @@
           </div>
           <!--Details button under the spent card-->
           <div class="details card-action">
-            <button class="waves-effect waves-teal btn-flat btn-large details-button" {{action "addExpense"}}>Details</button>
+            <button class="waves-effect waves-teal btn-flat btn-large details-button" {{action "addExpense"}}>NEW</button>
           </div>
           <!--More info about the spent amount upon clicking the spent card-->
           <div class="card-reveal activator">
@@ -166,7 +166,7 @@
             <!--Earnings row-->
             <div class="earnings row">
               <div id="earnings" class="col s12">
-                <h6>EARNINGS</h6>
+                <h6 class="center-align">EARNINGS</h6>
                 <p class="flow-text center-align">
                   Details earning information here. Might include graphs, charts, grapgics etc. This section might be extensive.
                 </p>
@@ -182,6 +182,9 @@ TO DO:
 -->
             <div class="row expense">
               <!-- Expense collection -->
+              <div class="col s12">
+                <h6 class="center-align">EXPENSES</h6>
+              </div>
               <div class="col s12">
               {{#md-collection content=unitData.expenses as |expense|}}
                 <div class='collection-item valign-wrapper'>
