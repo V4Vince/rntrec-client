@@ -30,9 +30,14 @@ p.house-card-substript {
   color: red;
 }
 
-.bold {
- @extend .black-text;
+// .bold {
+//  font-weight: bold;
+// }
+
+.details-button {
+  font-weight: bold;
 }
+
 .light {
   @extend .black-text, .lighten-3;
 }
