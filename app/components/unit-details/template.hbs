@@ -105,13 +105,24 @@
         <div class="card white darken-1">
           <!--current lease card contents-->
           <div class="card-content house-card">
+            {{#if unitData.contract}}
             <div class="card-title">Active Lease</div>
+
             <!--current lease info row-->
             <div class="row">
               <div class="container flow-text center-align">
                 Shows the info of this this unit's current lease. When each rent was collected, how much, from whom  etc. Also shows how many months are left. Lease start date etc. View contract link will also go here.
               </div>
             </div><!--End of current-lease info row-->
+            {{else}}
+            <div class="card-title">No Active Lease Contract</div>
+            <!--current lease info row-->
+            <div class="row">
+              <div class="container flow-text center-align">
+                Please add a lease contract
+              </div>
+            </div><!--End of current-lease info row-->
+            {{/if}}
           </div><!--card-content current-lease-->
           <!--View contract button under the active lease-->
           <div class="details card-action">
