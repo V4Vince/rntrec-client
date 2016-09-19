@@ -6,6 +6,8 @@ function commafy( num ) {
     if (noCommaNum.length >= 4) {
         let newNum = noCommaNum.slice(0, -3) + "," + noCommaNum.slice(-3);
         return newNum;
+    } else {
+      return num;
     }
 }
 
