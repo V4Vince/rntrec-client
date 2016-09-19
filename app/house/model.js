@@ -1,4 +1,5 @@
 import DS from 'ember-data';
+import Ember from 'ember';
 
 export default DS.Model.extend({
   streetName: DS.attr('string'),
@@ -12,4 +13,7 @@ export default DS.Model.extend({
   units: DS.hasMany('unit', { async: false }),
   //async false because expenses is embedded
   expenses: DS.hasMany('expense', { async: false }),
+
+  allExpenses: Ember.computed.mapBy('expenses', 'expenseAmount'),
+  totalExpenses: Ember.computed.sum('allExpenses')
 });

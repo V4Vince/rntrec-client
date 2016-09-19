@@ -48,10 +48,13 @@
                 <div class="col s6 m4">
                   <div class="card-panel">
                     <span class="house-quick-info ">
-                      <p>$12,000</p>
+                      <p>{{format-currency house.totalExpenses}}</p>
+                      <p>
+                        {{log house.totalExpenses}}
+                      </p>
                     </span>
                     <span class="subscript">
-                      <p>Net Revenue</p>
+                      <p>Total Expense</p>
                     </span>
                   </div>
                 </div>
