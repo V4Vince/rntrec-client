@@ -9,6 +9,10 @@ export default Ember.Component.extend({
   showOptions: false,
   showExpenseForm: false,
 
+  //Sorts expenses based on expense date in desc order
+  sortPropertyBy: ['expenseDate:desc'],
+  sortedProperty: Ember.computed.sort('house.expenses', 'sortPropertyBy'),
+
   actions: {
     //add unit button
     add: function(){
