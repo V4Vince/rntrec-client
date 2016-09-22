@@ -16,4 +16,5 @@ export default DS.Model.extend({
 
   allExpenses: Ember.computed.mapBy('expenses', 'expenseAmount'),
   totalExpenses: Ember.computed.sum('allExpenses')
+
 });
