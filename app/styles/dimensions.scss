@@ -15,6 +15,7 @@ ember-application {
   margin-bottom: 25px;
 }
 
+//Padding for the bottom of all pages
 .universal-padding  {
   padding-bottom: 300px;
 }
@@ -84,14 +85,13 @@ button.btn-flat.details-button {
   margin-bottom: 25px;
 }
 
-
+//MODAL DIMENS
 .modal {
   width: 80% !important ;
-  min-height: 80% !important;
+  min-height: 100% !important;
 }
 
 //LOGIN PAGE//////////////////////////
-
 #sign-in-card {
   margin: 20% auto 5%;
   display: block;
@@ -101,3 +101,7 @@ button.btn-flat.details-button {
   margin: 0px 0 15px;
 }
 //////////////////////////////////////
+
+//CONTRACT MODAL
+//Make all modals height: 100%;
+///////

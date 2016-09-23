@@ -1,7 +1,7 @@
 <!--Show if modalIsOpen is true-->
 {{#if showContract}}
-  {{#md-modal close='closeModal' isFooterFixed=true}}
-      <div class="modal-content">
+  {{#md-modal close='closeModal' class="contract-modal"}}
+      <div class="contract-modal modal-content">
           <!-- Placeholder for title of modal-->
           <h5 class="flow-text">Current Contract</h5>
           <h5>{{unitData.house.streetName}}</h5>
@@ -21,11 +21,12 @@
             {{/if}}
           </p>
       </div>
-      <div class="modal-footer">
+      <!-- SHould be edit button for contract.
+           Button should open an options card.
+           Options card  should have a position: fixed. -->
         {{md-btn text='Terminate Lease'
           action='deleteContract'
           class='red white-text text-darken-3'}}
-      </div>
   {{/md-modal}}
 {{/if}}
 
