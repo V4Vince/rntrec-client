@@ -13,9 +13,9 @@
 
   <div class="row">
     <div class="col s12">
-      {{email-input email=credentials.email}}
-      {{password-input password=credentials.password}}
-      {{password-confirmation-input password=credentials.passwordConfirmation}}
+      {{all-inputs/email-input email=credentials.email}}
+      {{all-inputs/password-input password=credentials.password}}
+      {{all-inputs/password-confirmation-input password=credentials.passwordConfirmation}}
 
       {{md-btn text='Sign Up'
         action='submit'
