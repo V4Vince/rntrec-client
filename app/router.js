@@ -16,6 +16,7 @@ Router.map(function () {
   this.route('unit', { path: '/units/:unit_id' });
   this.route('new-property');
   this.route('profile');
+  this.route('loading');
 });
 
 export default Router;
