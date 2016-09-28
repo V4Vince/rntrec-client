@@ -88,7 +88,9 @@ button.btn-flat.details-button {
 //MODAL DIMENS
 .modal {
   width: 80% !important ;
-  min-height: 100% !important;
+  min-height: 95% !important;
+  top: 10px !important;
+  bottom: 10px !important;
 }
 
 //LOGIN PAGE//////////////////////////
@@ -105,7 +107,11 @@ button.btn-flat.details-button {
 //CONTRACT MODAL
 //Make all modals height: 100%;
 ///////
-
+.summary-card.col,
+.unit-quick-info-card.col {
+  padding-left: 0;
+  padding-right: 0;
+}
 
 
 .loading {
