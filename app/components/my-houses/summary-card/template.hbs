@@ -1,90 +1,65 @@
-<div class="summary-card col s12 l10">
+<div class="col s12 m10">
+  <div class="card white darken-1">
+    <!--house card content-->
+    <div class="card-content">
+      <!--Links to specific house-->
+      {{#link-to 'house' house.id}}
+        <span class="card-title">{{house.streetName}}</span>
+      {{/link-to}}
 
-    <div class="card white darken-1">
-      <!--house card content-->
-      <div class="card-content house-card">
-        <!--Links to specific house-->
-        {{#link-to 'house' house.id}}
-          <span id="house-name-card-title" class="card-title">{{house.streetName}}</span>
-        {{/link-to}}
-        <!--Divider-->
-        <div class="divider"></div>
+      <!--Divider-->
+      <div class="divider"></div>
 
-        <!--House quick-info row-->
-        <div class="house-quick-info-container row">
-          <!--Net-revenue block-->
-          <div class="col s6 m4">
-            <div class="card-panel">
-              <span class="house-quick-info ">
-                <p>$12,000</p>
-              </span>
-              <span class="subscript">
-                <p>Net Revenue</p>
-              </span>
-            </div>
+      <!--House quick-info row-->
+      <div class="row">
+        <!--Net-revenue block-->
+        <div class="col s6 m4">
+          <div class="card-panel">
+            <span class="flow-text">
+              <p>$12,000</p>
+            </span>
+            <span>
+              <p>Net Revenue</p>
+            </span>
           </div>
-          <!--Active units block-->
-          <div class="col s6 m4">
-            <div class="card-panel">
-              <span class="house-quick-info white">
-                <p>5/6</p>
-              </span>
-              <span class="subscript">
-                <p>Active Units</p>
-              </span>
-            </div>
-          </div>
-          <!--Net-revenue block-->
-          <div class="col s6 m4">
-            <div class="card-panel">
-              <span class="house-quick-info ">
-                <p>{{format-currency house.totalUnitExpenses}}</p>
-                <p>
-                  {{log house.totalUnitExpenses}}
-                </p>
-              </span>
-              <span class="subscript">
-                <p>Total Expense</p>
-              </span>
-            </div>
-          </div>
-          <!--Active units block-->
-          <div class="col s6 m4">
-            <div class="card-panel">
-              <span class="house-quick-info white">
-                <p>5/6</p>
-              </span>
-              <span class="subscript">
-                <p>Active Units</p>
-              </span>
-            </div>
-          </div>
+        </div>
+        <!--End net-revenue block-->
 
-        </div><!-- house-quick-info-container row -->
-      </div><!-- house card-content -->
-    </div><!--card-->
+        <!--Active units block-->
+        <div class="col s6 m4">
+          <div class="card-panel">
+            <span class="flow-text">
+              <p>5/6</p>
+            </span>
+            <span>
+              <p>Active Units</p>
+            </span>
+          </div>
+        </div>
+        <!--Active units block-->
 
+        <!--Total expense block-->
+        <div class="col s6 m4">
+          <div class="card-panel">
+            <span class="flow-text">
+              <p>{{format-currency house.totalUnitExpenses}}</p>
+            </span>
+            <span>
+              <p>Total Expense</p>
+            </span>
+          </div>
+        </div>
+        <!--End total expense block-->
+
+      </div><!--End house quick-info row-->
+    </div><!--End house card-content -->
+  </div><!--End card-->
 </div><!--col-->
 
-  <div class="unit-quick-info-card col s12 l2">
+<div class="col s12 m2">
   {{#if house.units}}
     {{#md-collection content=house.units as |unit|}}
       {{link-to unit.unitNum "unit" unit.id class='collection-item'}}
     {{/md-collection}}
   {{/if}}
 </div>
-
-  <!--Unit with clickable link block-->
-  {{!-- <div class="unit-quick-info-card col s12 l2">
-    {{#if house.units}}
-    {{#each house.units as |unit|}}
-      {{#link-to "unit" unit.id}}
-        <div class="card z-depth-2">
-          <div class="unit-card-content center-align flow-text">
-            <span class="unit-subscript">Unit</span> {{unit.unitNum}}
-          </div>
-        </div>
-      {{/link-to}}
-    {{/each}}
-    {{/if}}
-  </div> --}}

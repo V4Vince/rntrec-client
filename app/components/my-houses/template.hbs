@@ -1,18 +1,21 @@
-<div class="row universal-padding">
+{{#if (not housesData)}}
+  <div class="container">
+    <h5 class="flow-text center-align">Please add a property to begin tracking</h5>
+  </div>
+{{/if}} <!--if not housesData-->
 
+
+<div class="row universal-padding">
   {{#each sortedProperty as |house|}}
   <!--Checks to see if the house has an ID, if it doesnt then skip it.
-
       **This is a workaround for duplicate record issue.
       Issue: Whenever a new record that has a hasMany is created,
       ember shows two of the newly created record (one from the
       server and one with an ID of null)-->
   {{#if house.id}}
-    <div class="row">
-      {{my-houses/summary-card house=house}}
-    </div>
+  <div class="row">
+    {{my-houses/summary-card house=house}}
+  </div>
   {{/if}}
-
   {{/each}}
-
 </div>

@@ -28,16 +28,16 @@ ember-application {
   padding-top: 20px;
 }
 
-.all-property-card {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  flex-wrap: wrap;
-  .unit-quick-info-card {
-    margin-bottom: 20px;
-  }
-}
+// .all-property-card {
+//   display: -webkit-flex;
+//   display: flex;
+//   -webkit-flex-direction: row;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   .unit-quick-info-card {
+//     margin-bottom: 20px;
+//   }
+// }
 
 .unit-card-content {
   padding-top: 10px;
@@ -104,16 +104,14 @@ button.btn-flat.details-button {
 }
 //////////////////////////////////////
 
-//CONTRACT MODAL
-//Make all modals height: 100%;
-///////
-.summary-card.col,
-.unit-quick-info-card.col {
-  padding-left: 0;
-  padding-right: 0;
-}
-
 
 .loading {
   padding: 100px;
+}
+
+.input-field {
+  margin: 0 !important;
+}
+.form-control {
+  margin: 0 !important;
 }
