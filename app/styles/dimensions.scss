@@ -115,3 +115,17 @@ button.btn-flat.details-button {
 .form-control {
   margin: 0 !important;
 }
+
+// unit list in all-houses view
+.col.unit-list-col {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.collection {
+  @extend .z-depth-1;
+}
+
+.all-property-card {
+  @extend .z-depth-0;
+}

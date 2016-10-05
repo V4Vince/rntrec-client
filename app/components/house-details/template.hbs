@@ -1,15 +1,76 @@
-<!-- Breadcrumb -->
+<!-- Breadcrumb //////////////////////-->
 <div class="row">
-  <div class="col s12">
+  <div class="col s12 breadcrumb">
     <!-- Link to all properties -->
-    {{#link-to 'houses' class="teal-text breadcrumb"}}Properties{{/link-to}}
+    {{#link-to 'houses' class="teal-text"}}Properties{{/link-to}}
+
+    <span class="breadcrumb-divider">|</span>
+
     <!-- Link to property -->
-    {{#link-to 'house' house.id class="teal-text breadcrumb"}}{{house.streetName}}{{/link-to}}
+    {{#link-to 'house' house.id class="teal-text"}}{{house.streetName}}{{/link-to}}
   </div>
 </div>
 
 
 <div class="row universal-padding">
+  {{#md-card}}
+    {{#md-card-content class="property-detail-content"}}
+    <div class="valign-wrapper">
+      <i class="material-icons street-icon">location_on</i>
+      <span class="card-title">{{house.streetName}}</span>
+      <div class="col s1">
+        <i class="material-icons street-option-icon" {{action "open"}}>more_vert</i>
+      </div>
+    </div>
+    {{/md-card-content}}
+
+    <!-- Money Section //////////////////////-->
+    {{#md-card-action}}
+      <div class="section-title">Money</div>
+      <div class="divider"></div>
+      <div class="row property-card-sections">
+        <!-- Revenue -->
+        <div class="col s6 m4 center-align">
+          <h4>{{format-currency house.totalExpenses}}</h4>
+          <span>Revenue To Date</span>
+        </div>
+        <!-- Expense -->
+        <div class="col s6 m4 center-align">
+          <h4>{{format-currency house.totalExpenses}}</h4>
+          <span>Expense To Date</span>
+        </div>
+        <!-- Incoming Rent -->
+        <div class="col m4 center-align hide-on-small-only">
+          <h4>{{format-currency house.totalExpenses}}</h4>
+          <span>Incoming Rent</span>
+        </div>
+      </div>
+    {{/md-card-action}}
+
+    <!-- Unit Secton //////////////////////-->
+    {{#md-card-action}}
+      <div class="section-title">Units</div>
+      <div class="divider"></div>
+      <div class="row property-card-sections">
+        <!-- Revenue -->
+        <div class="col s6 m4 center-align">
+          <h4>1</h4>
+          <span>Unit with rent due</span>
+        </div>
+        <!-- Vacant Units -->
+        <div class="col s6 m4 center-align">
+          <h4>2</h4>
+          <span>Vacant Units</span>
+        </div>
+        <!-- Incoming Rent -->
+        <div class="col m4 center-align hide-on-small-only">
+          <h4>2</h4>
+          <span>Unit expiring soon</span>
+        </div>
+      </div>
+    {{/md-card-action}}
+
+{{/md-card}}
 
     <div class="row">
       <!--Property Name-->

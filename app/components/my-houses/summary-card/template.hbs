@@ -1,5 +1,5 @@
 <div class="col s12 m10">
-  <div class="card white darken-1">
+  <div class="card white darken-1 all-property-card">
     <!--house card content-->
     <div class="card-content">
       <!--Links to specific house-->
@@ -56,7 +56,7 @@
   </div><!--End card-->
 </div><!--col-->
 
-<div class="col s12 m2">
+<div class="col s12 m2 unit-list-col">
   {{#if house.units}}
     {{#md-collection content=house.units as |unit|}}
       {{link-to unit.unitNum "unit" unit.id class='collection-item'}}

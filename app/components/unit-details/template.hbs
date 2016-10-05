@@ -11,10 +11,16 @@
   <div class="col s12">
     <!-- Link to all properties -->
     {{#link-to 'houses' class="teal-text breadcrumb"}}Properties{{/link-to}}
+
+    <span class="breadcrumb-divider">|</span>
+
     <!-- Link to property -->
-    {{#link-to 'house' unitData.house.id class="teal-text breadcrumb"}}{{unitData.house.streetName}}{{/link-to}}
+    {{#link-to 'house' unitData.house.id class="teal-text"}}{{unitData.house.streetName}}{{/link-to}}
+
+    <span class="breadcrumb-divider">|</span>
+
     <!-- Link to current unit -->
-    {{#link-to 'unit' unitData.id class="teal-text breadcrumb"}}Unit: {{unitData.unitNum}}{{/link-to}}
+    {{#link-to 'unit' unitData.id class="teal-text"}}Unit: {{unitData.unitNum}}{{/link-to}}
   </div>
 </div>
 
