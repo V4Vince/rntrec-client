@@ -1,4 +1,4 @@
-{{#md-card title="Overview" titleClass="center-align"}}
+{{#md-card title="Unit Overview" titleClass="center-align"}}
   {{#md-card-content}}
   {{/md-card-content}}
 
@@ -10,48 +10,39 @@
   {{/md-card-action}}
 
   {{#md-card-action}}
+    <!-- Bedrooms -->
     <div class="row">
-      <div class="col s6">Number of Units</div>
-      <div class="col s6">{{house.numUnits}}</div>
+      <div class="col s6">Bedrooms</div>
+      <div class="col s6">{{unitData.numBedrooms}}</div>
+      {{#if (not unitData.numBedroom)}}
+      <div class="col s6">Unavailable</div>
+      {{/if}}
+    </div>
+    <!-- Bathrooms -->
+    <div class="row">
+      <div class="col s6">Bathrooms</div>
+      <div class="col s6">{{unitData.numBathrooms}}</div>
+      {{#if (not unitData.numBathrooms)}}
+      <div class="col s6">Unavailable</div>
+      {{/if}}
+    </div>
+    <!-- Parking -->
+    <div class="row">
+      <div class="col s6">Parking</div>
+      <div class="col s6">{{unitData.numParking}}</div>
+      {{#if (not unitData.numParking)}}
+      <div class="col s6">Unavailable</div>
+      {{/if}}
     </div>
   {{/md-card-action}}
 
   {{#md-card-action}}
     <div class="row">
-      <div class="col s6">Purchase Price</div>
-      {{#if house.purchasePrice}}
-      <div class="col s6">{{house.purchasePrice}}</div>
+      <div class="col s6">Status</div>
+      {{#if unitData.contract}}
+      <div class="col s6 teal-text">Active</div>
       {{else}}
-      <div class="col s6">Unavailable</div>
-      {{/if}}
-      <div class="col s6">Current Price</div>
-      {{#if house.currentPrice}}
-      <div class="col s6">{{house.currentPrice}}</div>
-      {{else}}
-      <div class="col s6">Unavailable</div>
-      {{/if}}
-    </div>
-  {{/md-card-action}}
-
-  {{#md-card-action}}
-    <div class="row">
-      <div class="col s6">Mortgage</div>
-      {{#if house.mortgage}}
-      <div class="col s6">{{house.mortgage}}</div>
-      {{else}}
-      <div class="col s6">Unavailable</div>
-      {{/if}}
-      <div class="col s6">Taxes</div>
-      {{#if house.taxes}}
-      <div class="col s6">{{house.taxes}}</div>
-      {{else}}
-      <div class="col s6">Unavailable</div>
-      {{/if}}
-      <div class="col s6">Insurance</div>
-      {{#if house.insurance}}
-      <div class="col s6">{{house.insurance}}</div>
-      {{else}}
-      <div class="col s6">Unavailable</div>
+      <div class="col s6 red-text">Vacant</div>
       {{/if}}
     </div>
   {{/md-card-action}}
