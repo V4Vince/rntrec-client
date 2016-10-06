@@ -8,7 +8,7 @@ export default Ember.Component.extend({
   //delete <- from unit route
   showContract: false,
   showContractForm: false,
-  showOptions: false,
+  showUnitOptions: false,
   showExpenseForm: false,
 
   //Sorts expenses based on expense date in desc order
@@ -18,8 +18,8 @@ export default Ember.Component.extend({
   actions: {
       //opens the option modal
       open: function(){
-        this.set('showOptions', true);
-        console.log(this.get('showOptions'));
+        this.set('showUnitOptions', true);
+        console.log(this.get('showUnitOptions'));
       },
       newContract (){
         let showContractForm = this.get('showContractForm');

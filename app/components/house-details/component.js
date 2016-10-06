@@ -6,7 +6,7 @@ export default Ember.Component.extend({
   //unitParams
   //delete <- from house route
   addUnit: false,
-  showOptions: false,
+  showPropertyOptions: false,
   showExpenseForm: false,
 
   //Sorts expenses based on expense date in desc order
@@ -21,8 +21,8 @@ export default Ember.Component.extend({
     },
     //opens option modal
     open: function(){
-      this.set('showOptions', true);
-      console.log(this.get('showOptions'));
+      this.set('showPropertyOptions', true);
+      console.log(this.get('showPropertyOptions'));
     },
     //sends the delete action with the property to the house route to delete this property
     delete(){

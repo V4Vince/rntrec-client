@@ -1,13 +1,31 @@
-{{#if showOptions}}
+{{#if showPropertyOptions}}
   {{#md-modal close='closeModal'}}
     <div class="row options-header">
       <p>Options for</p>
-      <h4 class="flow-text">{{house.streetName}}</h4>
+      <h4 class="flow-text">{{street}}{{unit}}</h4>
     </div>
     <div class="divider"></div>
     <div class="row">
       <div class="col s12 m6">
-        {{property-overview-modal/overview-info house=house}}
+        {{property-overview-modal/house-overview-info house=house}}
+      </div>
+      <div class="col s12 m6">
+        {{property-overview-modal/option-buttons delete="delete"}}
+      </div>
+    </div>
+  {{/md-modal}}
+{{/if}}
+
+{{#if showUnitOptions}}
+  {{#md-modal close='closeModal'}}
+    <div class="row options-header">
+      <p>Options for</p>
+      <h4 class="flow-text">{{street}} #{{unit}}</h4>
+    </div>
+    <div class="divider"></div>
+    <div class="row">
+      <div class="col s12 m6">
+        {{property-overview-modal/unit-overview-info unitData=unitData}}
       </div>
       <div class="col s12 m6">
         {{property-overview-modal/option-buttons delete="delete"}}
