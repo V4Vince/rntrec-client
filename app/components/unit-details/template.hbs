@@ -14,6 +14,9 @@
   street=unitData.house.streetName
   unit=unitData.unitNum }}
 
+<!-- Expense Modal -->
+{{expense-card showExpenseForm=showExpenseForm unitData=unitData }}
+
 <!--- BREADCRUMBS ////////////////////////////////////////////////////-->
 <div class="row">
   <div class="col s12">
@@ -35,79 +38,72 @@
 <!--- CONTAINS EVERYTHING ///////////////////////////////////////////-->
 <div class="row universal-padding">
 
-    <div class="row">
-      <!--Property Name and Unit Number-->
-      <div class="col s10">
-        <h5 style="display: inline-block">{{unitData.house.streetName}}</h5>
-        <h4><span class="unit-num-heading">unit</span> {{unitData.unitNum}}</h4>
+  {{#md-card}}
+    {{#link-to 'house' unitData.house.id}}
+    {{#md-card-content class="property-detail-content"}}
+    <div class="valign-wrapper white-text">
+      <i class="material-icons street-icon">location_on</i>
+      <p class="subScript">{{unitData.house.streetName}}</p>
+    </div>
+    {{/md-card-content}}
+    {{/link-to}}
+    {{#md-card-content class="unit-detail-content"}}
+    <div class="valign-wrapper">
+      <h4 class="card-title">Unit {{unitData.unitNum}}</h4>
+      <div class="col s1">
+        <i class="material-icons street-option-icon" {{action "open"}}>more_vert</i>
       </div>
-      <!--Clickable options button near the property name-->
-      <div class="col s2 ">
-        <a class="options-button btn-flat right" {{action "open"}}>
-          <img class="options-icon" src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_mode_edit_48px-128.png" alt="" />
-        </a>
-      </div>
+    </div>
+    {{/md-card-content}}
 
-    </div><!--row-->
+    <!-- Money Section //////////////////////-->
+    {{#md-card-action}}
+      <div class="section-title">Money</div>
+      <div class="divider"></div>
 
-    <!--First row of cards-->
-    <div class="row">
-      <!--Defined how many columns the Earned card will take-->
-      <div class="col s12 l5">
-        <div class="card xsmall">
-          <!--Earned Card showing the amount earned-->
-          <div class="card-content activator">
-            <span class="card-title grey-text text-darken-4">Earned<i class="material-icons right">more_vert</i></span>
-            <h4 class="center-align activator">$1,230</h4>
+      <div class="container">
+        <div class="row property-card-sections">
+          <!-- Revenue -->
+          <div class="col s6 center-align">
+            <h4>{{format-currency unitData.totalExpenses}}</h4>
+            <span>Revenue To Date</span>
           </div>
-          <!--Details button under the earned card-->
-          <div class="details card-action">
-            <button class="waves-effect waves-teal btn-flat btn-large details-button">Details</button>
+          <!-- Expense -->
+          <div class="col s6 center-align">
+            <a class="waves-effect waves-light addExpenseButton" {{action "addExpense"}}>
+              <h4>{{format-currency unitData.totalExpenses}}</h4>
+              <span>Expense To Date</span>
+            </a>
           </div>
-          <!--More info about the earned amount upon clicking the earned card-->
-          <div class="card-reveal activator">
-            <span class="card-title grey-text text-darken-4">Earned since<i class="material-icons right">close</i></span>
-            <p>Break down how the number is calculated</p>
-          </div>
-        </div><!--card xsmall-->
-      </div><!--col s12 l5-->
+        </div>
+    </div>
+    {{/md-card-action}}
 
-      <!--Defined how many columns the Spent card will take-->
-      <div class="col s12 l5">
-        <div class="card xsmall">
-          <!--Spent Card showing the amount spent-->
-          <div class="card-content activator">
-            <span class="card-title grey-text text-darken-4">Spent<i class="material-icons right">more_vert</i></span>
-            <h4 class="center-align activator">{{format-currency unitData.totalExpenses}}</h4>
-          </div>
-          <!--Details button under the spent card-->
-          <div class="details card-action">
-            <button class="waves-effect waves-teal btn-flat btn-large details-button" {{action "addExpense"}}>NEW</button>
-          </div>
-          <!--More info about the spent amount upon clicking the spent card-->
-          <div class="card-reveal activator">
-            <span class="card-title grey-text text-darken-4">Spent since<i class="material-icons right">close</i></span>
-            <p>Break down how the number is calculated</p>
-          </div>
-        </div><!--card xsmall-->
-      </div><!--col s12 l5-->
-
-      <!-- Expense Modal -->
-      {{expense-card showExpenseForm=showExpenseForm unitData=unitData }}
-
-      <!--Column defines how larg the property quick-info card will be-->
-      <div class="col s12 l2">
-        <div class="card white darken-1">
-            <ul class="collection">
-              <li class="collection-item">Beds:</li>
-              <li class="collection-item">Baths:</li>
-              <li class="collection-item">Active: $2,000/month</li>
-              <li class="collection-item">Months Left: 4</li>
-            </ul>
+    <!-- Lease Secton //////////////////////-->
+    {{#md-card-action}}
+      <div class="section-title">Status</div>
+      <div class="divider"></div>
+      <div class="row property-card-sections">
+        <!-- Months left -->
+        <div class="col s6 m4 center-align">
+          <h4>13</h4>
+          <span>Days until rent due</span>
+        </div>
+        <!-- Rent Collected -->
+        <div class="col s6 m4 center-align">
+          <h4>$12,000</h4>
+          <span>Rent collected</span>
+        </div>
+        <!-- Months left -->
+        <div class="col s6 m4 center-align hide-on-small-only">
+          <h4>6</h4>
+          <span>Months left on lease</span>
         </div>
       </div>
+    {{/md-card-action}}
 
-    </div><!-- end of First row of cards-->
+  {{/md-card}}
+
 
     <!--Current lease card row-->
     <div class="row">

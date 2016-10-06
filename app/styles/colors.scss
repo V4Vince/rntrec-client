@@ -38,3 +38,28 @@ html {
   background-color: teal;
   color: white;
 }
+
+.unit-detail-content{
+  @extend .teal, .darken-3;
+  color: white;
+  h4 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+a.addExpenseButton:hover {
+  h4,
+  span {
+    font-weight: 900;
+    @extend .orange-text, .text-darken-1;
+  }
+}
+.addExpenseButton {
+  h4 {
+    @extend .orange-text;
+  }
+  span {
+    color: black;
+  }
+}
