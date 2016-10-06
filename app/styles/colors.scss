@@ -17,19 +17,17 @@ html {
   @extend .grey, .lighten-3;
 }
 
-.card-panel {
-  background-color: $teal-darken-2;
-  color: white;
-}
-
 .card-action.house-unit-card {
   background-color: $teal-darken-3;
 }
 
-
 // .bold {
 //  font-weight: bold;
 // }
+
+.modal {
+  background-color: $teal;
+}
 
 .details-button {
   font-weight: bold;

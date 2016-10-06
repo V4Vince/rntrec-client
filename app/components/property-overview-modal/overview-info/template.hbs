@@ -1,0 +1,53 @@
+{{#md-card-action}}
+  <div class="row">
+    <div class="col s6">Created On</div>
+    <div class="col s6">{{moment-format house.createdAt 'LL'}}</div>
+  </div>
+{{/md-card-action}}
+
+{{#md-card-action}}
+  <div class="row">
+    <div class="col s6">Number of Units</div>
+    <div class="col s6">{{house.numUnits}}</div>
+  </div>
+{{/md-card-action}}
+
+{{#md-card-action}}
+  <div class="row">
+    <div class="col s6">Purchase Price</div>
+    {{#if house.purchasePrice}}
+    <div class="col s6">{{house.purchasePrice}}</div>
+    {{else}}
+    <div class="col s6">Unavailable</div>
+    {{/if}}
+    <div class="col s6">Current Price</div>
+    {{#if house.currentPrice}}
+    <div class="col s6">{{house.currentPrice}}</div>
+    {{else}}
+    <div class="col s6">Unavailable</div>
+    {{/if}}
+  </div>
+{{/md-card-action}}
+
+{{#md-card-action}}
+  <div class="row">
+    <div class="col s6">Mortgage</div>
+    {{#if house.mortgage}}
+    <div class="col s6">{{house.mortgage}}</div>
+    {{else}}
+    <div class="col s6">Unavailable</div>
+    {{/if}}
+    <div class="col s6">Taxes</div>
+    {{#if house.taxes}}
+    <div class="col s6">{{house.taxes}}</div>
+    {{else}}
+    <div class="col s6">Unavailable</div>
+    {{/if}}
+    <div class="col s6">Insurance</div>
+    {{#if house.insurance}}
+    <div class="col s6">{{house.insurance}}</div>
+    {{else}}
+    <div class="col s6">Unavailable</div>
+    {{/if}}
+  </div>
+{{/md-card-action}}

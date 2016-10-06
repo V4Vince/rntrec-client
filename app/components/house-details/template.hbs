@@ -1,3 +1,11 @@
+<!--Where the options Modal component will appear-->
+{{property-overview-modal
+  delete="delete"
+  showOptions=showOptions
+  house=house
+  title=house.streetName
+  action="open"}}
+
 <!-- Breadcrumb //////////////////////-->
 <div class="row">
   <div class="col s12 breadcrumb">
@@ -69,7 +77,6 @@
         </div>
       </div>
     {{/md-card-action}}
-
 {{/md-card}}
 
     <div class="row">
@@ -84,12 +91,7 @@
           <img class="options-icon" src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_mode_edit_48px-128.png" alt="" />
         </a>
       </div>
-      <!--Where the options Modal component will appear-->
-      {{options-button
-        delete="delete"
-        showOptions=showOptions
-        title=house.streetName
-        action="open"}}
+
     </div><!--row-->
 
     <!--First row of cards-->

@@ -2,6 +2,7 @@ import DS from 'ember-data';
 import Ember from 'ember';
 
 export default DS.Model.extend({
+  createdAt: DS.attr('string'),
   streetName: DS.attr('string'),
   numUnits: DS.attr('number'),
   purchasePrice: DS.attr('number'),
