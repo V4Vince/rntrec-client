@@ -91,6 +91,7 @@ button.btn-flat.details-button {
   min-height: 95% !important;
   top: 10px !important;
   bottom: 10px !important;
+  padding: 1rem;
 }
 
 //LOGIN PAGE//////////////////////////
@@ -128,4 +129,19 @@ button.btn-flat.details-button {
 
 .all-property-card {
   @extend .z-depth-0;
+}
+
+.row.options-header {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  p {
+    margin-bottom: 0.5rem;
+  }
+  h4 {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.buttons {
+  margin: 0.5rem;
 }

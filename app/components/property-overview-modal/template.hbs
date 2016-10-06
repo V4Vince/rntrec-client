@@ -1,17 +1,17 @@
 {{#if showOptions}}
   {{#md-modal close='closeModal'}}
-  <div class="row">
-    <div class="col s12 m6">
-      {{#md-card title=title titleClass="center-align"}}
-        {{#md-card-content}}
-        <h6 class="flow-text">Overview</h6>
-        {{/md-card-content}}
+    <div class="row options-header">
+      <p>Options for</p>
+      <h4 class="flow-text">{{house.streetName}}</h4>
+    </div>
+    <div class="divider"></div>
+    <div class="row">
+      <div class="col s12 m6">
         {{property-overview-modal/overview-info house=house}}
-      {{/md-card}}
+      </div>
+      <div class="col s12 m6">
+        {{property-overview-modal/option-buttons delete="delete"}}
+      </div>
     </div>
-    <div class="col s12 m6">
-      {{property-overview-modal/option-buttons}}
-    </div>
-  </div>
   {{/md-modal}}
 {{/if}}
