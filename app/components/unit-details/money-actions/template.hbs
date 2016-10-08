@@ -1,0 +1,27 @@
+<div class="row valign-wrapper">
+  <div class="col s2">
+    <div class="section-title"><a>Money<i>SHOW</i></a></div>
+  </div>
+  <div class="col s10">
+    <p class="right-align flow-text">No notifications</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="container">
+  <div class="row property-card-sections">
+    <!-- Revenue -->
+    <div class="col s6 center-align">
+      <h4>{{format-currency unitData.totalExpenses}}</h4>
+      <span>Revenue To Date</span>
+    </div>
+    <!-- Expense -->
+    <div class="col s6 center-align">
+      <a class="waves-effect waves-light addExpenseButton" {{action "addExpense"}}>
+        <h4>{{format-currency unitData.totalExpenses}}</h4>
+        <span>Expense To Date</span>
+      </a>
+    </div>
+  </div>
+</div>
