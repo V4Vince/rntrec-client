@@ -60,134 +60,29 @@
     <!-- Money Section //////////////////////-->
     {{#md-card-action}}
       {{unit-details/money-actions
-        unitData=unitData }}
+        unitData=unitData
+        showExpenseForm=showExpenseForm
+        addExpense="addExpense"
+        showMoneyDetails=showMoneyDetails
+        showLeaseDetails=showLeaseDetails}}
     {{/md-card-action}}
 
     <!-- Lease Secton //////////////////////-->
     {{#md-card-action}}
       {{unit-details/lease-actions
-        unitData=unitData }}
+        unitData=unitData
+        showLeaseDetails=showLeaseDetails
+        showMoneyDetails=showMoneyDetails}}
     {{/md-card-action}}
 
   {{/md-card}}
 
+  {{#if showMoneyDetails}}
+    {{unit-details/money-details
+      sortedProperty=sortedProperty}}
+  {{/if}}
 
-    <!--Current lease card row-->
-    <div class="row">
-      <div class="col s12">
-        <div class="card white darken-1">
-          <!--current lease card contents-->
-          <div class="card-content house-card">
-            {{#if unitData.contract}}
-            <div class="card-title">Active Lease</div>
-
-            <!--current lease info row-->
-            <div class="row">
-              <div class="container flow-text center-align">
-                Shows the info of this this unit's current lease. When each rent was collected, how much, from whom  etc. Also shows how many months are left. Lease start date etc. View contract link will also go here.
-              </div>
-            </div><!--End of current-lease info row-->
-            {{else}}
-            <div class="card-title">No Active Lease Contract</div>
-            <!--current lease info row-->
-            <div class="row">
-              <div class="container flow-text center-align">
-                Please add a lease contract
-              </div>
-            </div><!--End of current-lease info row-->
-            {{/if}}
-          </div><!--card-content current-lease-->
-          <!--View contract button under the active lease-->
-          <div class="details card-action">
-            <!-- If contract exists, show the contract details-->
-            {{#if unitData.contract}}
-            <button class="waves-effect waves-teal btn-flat btn-large details-button" {{action "openContract"}}>VIEW CONTRACT</button>
-            <!-- If contractDOES NOT exists, show the contract form -->
-            {{else}}
-            <button class="waves-effect waves-teal btn-flat btn-large details-button" {{action "newContract"}}>+ ADD  CONTRACT</button>
-            {{/if}}
-          </div>
-          <!--Contract Modal-->
-          {{contract-card
-            unitData=unitData
-            showContract=showContract
-            showContractForm=showContractForm
-             }}
-        </div><!--card-->
-      </div>
-    </div>
-
-    <!--Tenant info row-->
-    <div class="row">
-      <div class="col s12">
-        <div class="card white darken-1">
-          <!--tenant info card contents-->
-          <div class="card-content house-card">
-            <div class="card-title">Tenant</div>
-            <!--tenant info row-->
-            <div class="row">
-              <div class="container flow-text center-align">
-                All tenant info goes here. Names, contact info, personal info such as employment etc.
-                Messaging link will also go here.
-              </div>
-            </div><!--End of tenant info row-->
-          </div><!--card-content tenant-->
-        </div><!--card-->
-      </div>
-    </div>
-
-    <!--Second row of cards-->
-    <div class="row">
-      <!--Column defines how large the Money Detail card will be-->
-      <div class="col s12">
-        <div class="card white darken-1">
-          <!--Money card contents-->
-          <div class="card-content house-card">
-            <span class="card-title">Money Details</span>
-            <!--Divider
-                Note: not showing up in the UI-->
-            <div class="divider"></div>
-            <!--Earnings row-->
-            <div class="earnings row">
-              <div id="earnings" class="col s12">
-                <h6 class="center-align">EARNINGS</h6>
-                <p class="flow-text center-align">
-                  Details earning information here. Might include graphs, charts, grapgics etc. This section might be extensive.
-                </p>
-              </div>
-            </div><!--end of Earnings row-->
-            <!--Divider-->
-            <div class="expense-earnings divider"></div>
-
-<!--
-TO DO:
-  1. Add Delete functionality
-  2. Add ability to edit within 5minutes of posting new expense
--->
-            <div class="row expense">
-              <!-- Expense collection -->
-              <div class="col s12">
-                <h6 class="center-align">EXPENSES</h6>
-              </div>
-              <div class="col s12">
-              {{#md-collection content=sortedProperty as |expense|}}
-                <div class='collection-item valign-wrapper'>
-                  <div class="col s7 m10">
-                    <h6><span class="bold">{{expense.expenseFor}}</span></h6>
-                    <p><span class="light">{{expense.expenseDescription}}</span></p>
-                  </div>
-                  <div class="col s5 m2 push-s1">
-                    <h6><span class="bold">{{formatCurrency expense.expenseAmount}}</span></h6>
-                    <p><span class="light">{{moment-format expense.expenseDate 'L'}}</span></p>
-                  </div>
-                </div>
-              {{/md-collection}}
-              </div>
-            </div>
-
-          </div><!--end of money card contents-->
-        </div>
-      </div><!--End of column defines how large the Money Detail card will be-->
-    </div><!--End of second row of cards-->
-
+  {{#if showLeaseDetails}}
+    {{unit-details/lease-details}}
+  {{/if}}
 </div>

@@ -1,0 +1,67 @@
+<div class="flow-text">
+  Lease Details
+</div>
+
+<!--Current lease card row-->
+<div class="row">
+  <div class="col s12">
+    <div class="card white darken-1">
+      <!--current lease card contents-->
+      <div class="card-content house-card">
+        {{#if unitData.contract}}
+        <div class="card-title">Active Lease</div>
+
+        <!--current lease info row-->
+        <div class="row">
+          <div class="container flow-text center-align">
+            Shows the info of this this unit's current lease. When each rent was collected, how much, from whom  etc. Also shows how many months are left. Lease start date etc. View contract link will also go here.
+          </div>
+        </div><!--End of current-lease info row-->
+        {{else}}
+        <div class="card-title">No Active Lease Contract</div>
+        <!--current lease info row-->
+        <div class="row">
+          <div class="container flow-text center-align">
+            Please add a lease contract
+          </div>
+        </div><!--End of current-lease info row-->
+        {{/if}}
+      </div><!--card-content current-lease-->
+      <!--View contract button under the active lease-->
+      <div class="details card-action">
+        <!-- If contract exists, show the contract details-->
+        {{#if unitData.contract}}
+        <button class="waves-effect waves-teal btn-flat btn-large details-button" {{action "openContract"}}>VIEW CONTRACT</button>
+        <!-- If contractDOES NOT exists, show the contract form -->
+        {{else}}
+        <button class="waves-effect waves-teal btn-flat btn-large details-button" {{action "newContract"}}>+ ADD  CONTRACT</button>
+        {{/if}}
+      </div>
+      <!--Contract Modal-->
+      {{contract-card
+        unitData=unitData
+        showContract=showContract
+        showContractForm=showContractForm
+         }}
+    </div><!--card-->
+  </div>
+</div>
+
+<!--Tenant info row-->
+<div class="row">
+  <div class="col s12">
+    <div class="card white darken-1">
+      <!--tenant info card contents-->
+      <div class="card-content house-card">
+        <div class="card-title">Tenant</div>
+        <!--tenant info row-->
+        <div class="row">
+          <div class="container flow-text center-align">
+            All tenant info goes here. Names, contact info, personal info such as employment etc.
+            Messaging link will also go here.
+          </div>
+        </div><!--End of tenant info row-->
+      </div><!--card-content tenant-->
+    </div><!--card-->
+  </div>
+</div>

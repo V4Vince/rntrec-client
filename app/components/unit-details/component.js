@@ -11,6 +11,9 @@ export default Ember.Component.extend({
   showUnitOptions: false,
   showExpenseForm: false,
 
+  showMoneyDetails: false,
+  showLeaseDetails: false,
+
   //Sorts expenses based on expense date in desc order
   sortPropertyBy: ['expenseDate:desc'],
   sortedProperty: Ember.computed.sort('unitData.expenses', 'sortPropertyBy'),
