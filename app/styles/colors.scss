@@ -48,18 +48,18 @@ html {
   }
 }
 
-a.addExpenseButton:hover {
-  h4,
-  span {
-    font-weight: 900;
-    @extend .orange-text, .text-darken-1;
-  }
-}
-.addExpenseButton {
-  h4 {
-    @extend .orange-text;
-  }
-  span {
-    color: black;
-  }
-}
+// a.addExpenseButton:hover {
+//   h4,
+//   span {
+//     font-weight: 900;
+//     @extend .orange-text, .text-darken-1;
+//   }
+// }
+// .addExpenseButton {
+//   h4 {
+//     @extend .orange-text;
+//   }
+//   span {
+//     color: black;
+//   }
+// }

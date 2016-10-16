@@ -13,15 +13,38 @@
   <div class="row property-card-sections">
     <!-- Revenue -->
     <div class="col s6 center-align">
-      <h4>{{format-currency unitData.totalExpenses}}</h4>
-      <span>Revenue To Date</span>
+      <div class="row valign-wrapper">
+        <div class="col s12 m10">
+          <h4>{{format-currency unitData.totalExpenses}}</h4>
+          <span>Revenue To Date</span>
+        </div>
+      <div class="col pull-m2">
+        {{md-btn action='addExpense'
+          icon='play_for_work'
+          buttonType='floating'
+          class='teal
+          hide-on-small-only
+          circle-add-buttons' }}
+      </div>
+    </div>
     </div>
     <!-- Expense -->
     <div class="col s6 center-align">
-      <a class="waves-effect waves-light addExpenseButton" {{action "addExpense"}}>
-        <h4>{{format-currency unitData.totalExpenses}}</h4>
-        <span>Expense To Date</span>
-      </a>
+      <div class="row valign-wrapper">
+        <div class="col s12 m10">
+          <h4>{{format-currency unitData.totalExpenses}}</h4>
+          <span>Expense To Date</span>
+        </div>
+        <div class="col pull-m2">
+          {{md-btn action='addExpense'
+            icon='play_for_work'
+          	buttonType='floating'
+          	class='teal
+            hide-on-small-only
+            circle-add-buttons' }}
+        </div>
+      </div>
     </div>
+
   </div>
 </div>
