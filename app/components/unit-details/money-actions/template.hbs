@@ -1,6 +1,6 @@
 <div class="row valign-wrapper">
   <div class="col s2">
-    <div class="section-title" {{action "openMoneyDetails"}}><a>Money<i>SHOW</i></a></div>
+    <div class="section-title" {{action "openMoneyDetails"}}><a>Money</a></div>
   </div>
   <div class="col s10">
     <p class="right-align flow-text">No notifications</p>
@@ -9,33 +9,33 @@
 
 <div class="divider"></div>
 
-<div class="container">
-  <div class="row property-card-sections">
+
+<div class="row center-align property-card-sections">
+  <div class="container">
     <!-- Revenue -->
-    <div class="col s6 center-align">
+    <div class="col s6 display-flex">
       <div class="row valign-wrapper">
-        <div class="col s12 m10">
+        <div>
           <h4>{{format-currency unitData.totalExpenses}}</h4>
           <span>Revenue To Date</span>
         </div>
-      <div class="col pull-m2">
-        {{md-btn action='addExpense'
-          icon='play_for_work'
-          buttonType='floating'
-          class='teal
-          hide-on-small-only
-          circle-add-buttons' }}
+
+          {{md-btn action='addExpense'
+            icon='play_for_work'
+            buttonType='floating'
+            class='teal
+            hide-on-small-only
+            circle-add-buttons' }}
       </div>
     </div>
-    </div>
     <!-- Expense -->
-    <div class="col s6 center-align">
+    <div class="col s6 display-flex">
       <div class="row valign-wrapper">
-        <div class="col s12 m10">
+        <div>
           <h4>{{format-currency unitData.totalExpenses}}</h4>
           <span>Expense To Date</span>
         </div>
-        <div class="col pull-m2">
+        <div>
           {{md-btn action='addExpense'
             icon='play_for_work'
           	buttonType='floating'
