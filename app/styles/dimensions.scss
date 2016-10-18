@@ -145,6 +145,10 @@ a.addExpenseButton {
     margin-left: 1rem;
   }
 }
+.collection-item.row {
+  display: flex;
+  align-items: stretch;
+}
 
 
 

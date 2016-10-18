@@ -29,20 +29,12 @@ TO DO:
 -->
       <!-- Expense collection -->
 
-      <span class="card-title">Expenses</span>
-
-      {{#md-collection content=sortedProperty as |expense|}}
-        <div class='collection-item valign-wrapper'>
-          <div class="col s7 m10">
-            <h6><span class="bold">{{expense.expenseFor}}</span></h6>
-            <p><span class="light">{{expense.expenseDescription}}</span></p>
-          </div>
-          <div class="col s5 m2 push-s1">
-            <h6><span class="bold">{{formatCurrency expense.expenseAmount}}</span></h6>
-            <p><span class="light">{{moment-format expense.expenseDate 'L'}}</span></p>
-          </div>
-        </div>
-      {{/md-collection}}
+      <span class="card-title" {{action "showExpenseHistory"}}>Expenses</span>
+      {{#if expenseHistory}}
+        {{unit-details/money-details/expense-history
+        sortedProperty=sortedProperty
+        expenseHistory=expenseHistory}}
+      {{/if}}
 
 
       </div><!--end of money card contents-->
