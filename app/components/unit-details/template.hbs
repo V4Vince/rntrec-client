@@ -39,15 +39,15 @@
 <div class="row universal-padding">
 
   {{#md-card}}
-    {{#link-to 'house' unitData.house.id}}
-    {{#md-card-content class="property-detail-content"}}
+    {{#link-to 'house' unitData.house.id }}
+    {{#md-card-content class="property-detail-content z-depth-1"}}
       <div class="valign-wrapper white-text">
         <i class="material-icons street-icon">location_on</i>
         <p class="">{{unitData.house.streetName}}</p>
       </div>
     {{/md-card-content}}
     {{/link-to}}
-    {{#md-card-content class="unit-detail-content"}}
+    {{#md-card-content class="unit-detail-content z-depth-2"}}
       <div class="valign-wrapper">
         <span class="subScript">UNIT</span>
         <span class="card-title flow-text"> {{unitData.unitNum}}</span>
